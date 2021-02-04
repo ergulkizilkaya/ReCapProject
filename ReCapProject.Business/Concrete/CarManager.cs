@@ -1,4 +1,6 @@
 ﻿using ReCapProject.Business.Abstract;
+using ReCapProject.Business.Utilities;
+using ReCapProject.Business.ValidationRules.FluentValidation;
 using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
 using System;
@@ -21,27 +23,21 @@ namespace ReCapProject.Business.Concrete
 
         public void Add(Car car)
         {
+            ValidationTool.Validate(new CarValidator(),car);
             _carDal.Add(car);
-        }
-
-        public void Delete(Car car)
-        {
-            _carDal.Delete(car);
         }
 
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }
-
-        public Car GetById(int carId)
+        public List<Car> GetCarsByBrandId(int v)
         {
-            return _carDal.GetById(carId);
+            return _carDal.GetAll(c=>c.BrandId==v);
         }
-
-        public void Update(Car car)
+        public List<Car> GetCarsByColorId(int v)
         {
-            _carDal.Update(car);
+            return _carDal.GetAll(c => c.ColorId == v);
         }
     }
 }

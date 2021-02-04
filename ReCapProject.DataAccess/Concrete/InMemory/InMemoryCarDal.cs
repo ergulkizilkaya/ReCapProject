@@ -3,6 +3,7 @@ using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace ReCapProject.DataAccess.Concrete.InMemory
                 new Car{ Id=3,BrandId=3,ColorId=5,DailyPrice=150,ModelYear=2015,Description="3 Nolu Araç Açıklaması" },
                 new Car{ Id=4,BrandId=4,ColorId=4,DailyPrice=210,ModelYear=2018,Description="4 Nolu Araç Açıklaması" },
                 new Car{ Id=5,BrandId=5,ColorId=8,DailyPrice=180,ModelYear=2016,Description="5 Nolu Araç Açıklaması" }
-              
+
             };
         }
 
@@ -36,16 +37,14 @@ namespace ReCapProject.DataAccess.Concrete.InMemory
             _carList.Remove(_deleteToCar);
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            return _carList;
+            return null;
         }
-
-        public Car GetById(int carId)
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            return _carList.FirstOrDefault(car=>car.Id == carId);
+            return null;
         }
-
         public void Update(Car car)
         {
             Car _updateToCar = _carList.FirstOrDefault(c => c.Id == car.Id);
