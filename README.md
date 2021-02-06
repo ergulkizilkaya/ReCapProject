@@ -47,7 +47,7 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access K
 <br>
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107106389-72e70000-683c-11eb-9717-e2a97e72c990.png)
 ### Veritabanı Oluşturma (localdb)
-sdf
+Araba Kiralama Projemiz localdb ile çalışmaktadır. LocalDb'de veritabanı oluşturmak için Visual Studio 2019 için View > SQL Server Object Explorer menü yolunu takip edebilirsiniz.
 <br>
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107105506-d02c8280-6837-11eb-865f-b2f3b8f4e779.png)
 
