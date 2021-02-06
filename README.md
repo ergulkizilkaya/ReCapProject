@@ -81,6 +81,7 @@ Variable Name | Data Type
 Id | int
 Name | string
     </td>
+  </tr>
   </table>
 
 
