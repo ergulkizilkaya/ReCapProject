@@ -104,6 +104,10 @@ Name | string
 EntityFrameworkCore.SqlServer 3.1.11
 FluentValidation 7.3.3
 ```
-
+## ScreenShots
+![image](https://user-images.githubusercontent.com/77868230/107121347-f1768880-68a2-11eb-889a-c410e6833c0a.png)  
+![image](https://user-images.githubusercontent.com/77868230/107121367-0bb06680-68a3-11eb-8ea8-65504ef18b07.png)  
+![image](https://user-images.githubusercontent.com/77868230/107121391-37335100-68a3-11eb-9232-c4d5d5a2d29c.png)  
+![image](https://user-images.githubusercontent.com/77868230/107121405-4914f400-68a3-11eb-9c90-3e75f68bab64.png)  
 ## :pencil2:Authors
 * **Ergül Kızılkaya** - [ergulkizilkaya](https://github.com/ergulkizilkaya)
