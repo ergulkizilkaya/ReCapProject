@@ -52,6 +52,30 @@ Araba Kiralama Projemiz localdb ile çalışmaktadır. LocalDb'de veritabanı ol
 :page_facing_up:`Sql File`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [ReCapProjectDB.sql](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProjectDB.sql)  
 <br>
+## Tables
+Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve veri tipleri hakkında bilgiler aşağıda listelenmiştir.   
+#### Car
+Variable Name | Data Type
+------------ | -------------
+CarId | int
+BrandId | int
+ColorId | int
+ModelYear | string
+DailyPrice | decimal
+Description | string
+
+#### Color
+Variable Name | Data Type
+------------ | -------------
+ColorId | int
+ColorName | string
+
+#### Brand
+Variable Name | Data Type
+------------ | -------------
+BrandId | int
+BrandName | string
+<br><br>
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107105506-d02c8280-6837-11eb-865f-b2f3b8f4e779.png)
 
 ```
