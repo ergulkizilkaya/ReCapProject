@@ -98,7 +98,7 @@ Name | string
 
 ```
 EntityFrameworkCore.SqlServer 3.1.11
-FluentValdiation 7.3.3
+FluentValidation 7.3.3
 ```
 
 ## :pencil2:Authors
