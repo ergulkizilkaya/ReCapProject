@@ -56,14 +56,12 @@ Araba Kiralama Projemiz localdb ile çalışmaktadır. LocalDb'de veritabanı ol
 Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve veri tipleri hakkında bilgiler aşağıda listelenmiştir.   
 <table>
   <tr>
-    <td>First Screen Page</td>
-     <td>Holiday Mention</td>
-     <td>Present day in purple and selected day in pink</td>
+    <td>Cars</td>
+     <td>Brands</td>
+     <td>Colors</td>
   </tr>
   <tr>
     <td>
-
-#### Cars
 Variable | Data Type
 ------------ | -------------
 Id | int
@@ -75,8 +73,6 @@ Description | string
    
    </td>
     <td>
-
-#### Brands
 Variable | Data Type
 ------------ | -------------
 Id | int
@@ -84,8 +80,6 @@ Name | string
    
    </td>
     <td>
-
-#### Colors
 Variable | Data Type
 ------------ | -------------
 Id | int
