@@ -1,6 +1,7 @@
 # ReCapProject - Araç Kiralama Sistemi
-Bu repo **Yazılım Geliştirici Yetiştirme Kampı**'nda yapılan çalışmaları kapsayan **Araç Kiralama Projesi**'ni içerir.
+
 ![bitmap](https://user-images.githubusercontent.com/77868230/107104545-37940380-6833-11eb-88c0-9fa3d4771470.png)  
+Bu repo **Yazılım Geliştirici Yetiştirme Kampı**'nda yapılan çalışmaları kapsayan **Araç Kiralama Projesi**'ni içerir.
 ## :pushpin:Getting Started
 N-Katmanlı mimari yapısı ile hazırlanan, EntityFramework kullanılarak CRUD işlemlerinin yapıldığı, Console arayüzü ile çalışan, Araç Kiralama iş yerlerine yönelik örnek bir proje.
 ## :books:Layers
