@@ -81,7 +81,42 @@ Name | string
 
 
 
+<table>
+  <tr>
+    <td>First Screen Page</td>
+     <td>Holiday Mention</td>
+     <td>Present day in purple and selected day in pink</td>
+  </tr>
+  <tr>
+    <td>
 
+#### Brand
+Variable Name | Data Type
+------------ | -------------
+Id | int
+Name | string
+   
+   </td>
+    <td>
+
+#### Brand
+Variable Name | Data Type
+------------ | -------------
+Id | int
+Name | string
+   
+   </td>
+    <td>
+
+#### Brand
+Variable Name | Data Type
+------------ | -------------
+Id | int
+Name | string
+   
+   </td>
+  </tr>
+ </table>
 
 
 <br><br>
