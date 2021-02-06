@@ -70,11 +70,12 @@ Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve v
 Variable | Data Type
 ------------ | -------------
 Id | int
+Name | nvarchar(50)
 BrandId | int
 ColorId | int
 ModelYear | int
 DailyPrice | decimal
-Description | string
+Description | nvarchar(50)
    
    </td>
     <td>
@@ -82,7 +83,7 @@ Description | string
 Variable | Data Type
 ------------ | -------------
 Id | int
-Name | string
+Name | nvarchar(50)
    
    </td>
     <td>
@@ -90,7 +91,7 @@ Name | string
 Variable | Data Type
 ------------ | -------------
 Id | int
-Name | string
+Name | nvarchar(50)
    
    </td>
   </tr>
