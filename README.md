@@ -27,7 +27,8 @@ Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetl
 <br> :file_folder:`ValidationRules`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `FluentValidation`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [CarValidator.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProject.Business/ValidationRules/FluentValidation/CarValidator.cs)   
-
+<br>
+![rect1510](https://user-images.githubusercontent.com/77868230/107105238-45975380-6836-11eb-8b3e-50c7b7989b14.png)
 ###  Data Access Layer
 Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access Katmanı**'nda **Abstract** ve **Concrete** olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.  
 <br>:file_folder:`Abstract`  
