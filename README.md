@@ -62,6 +62,7 @@ Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve v
   </tr>
   <tr>
     <td>
+
 Variable | Data Type
 ------------ | -------------
 Id | int
@@ -73,6 +74,7 @@ Description | string
    
    </td>
     <td>
+
 Variable | Data Type
 ------------ | -------------
 Id | int
@@ -80,6 +82,7 @@ Name | string
    
    </td>
     <td>
+
 Variable | Data Type
 ------------ | -------------
 Id | int
