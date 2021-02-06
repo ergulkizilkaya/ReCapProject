@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.Business", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.ConsoleUI", "ReCapProject.ConsoleUI\ReCapProject.ConsoleUI.csproj", "{F2FF9F50-F95F-4250-8653-55E2E42B50C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUI", "WpfUI\WpfUI.csproj", "{C65DDB95-A68C-4EC3-BBE5-0AD2EFF6F0A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F2FF9F50-F95F-4250-8653-55E2E42B50C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2FF9F50-F95F-4250-8653-55E2E42B50C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2FF9F50-F95F-4250-8653-55E2E42B50C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65DDB95-A68C-4EC3-BBE5-0AD2EFF6F0A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65DDB95-A68C-4EC3-BBE5-0AD2EFF6F0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65DDB95-A68C-4EC3-BBE5-0AD2EFF6F0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65DDB95-A68C-4EC3-BBE5-0AD2EFF6F0A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

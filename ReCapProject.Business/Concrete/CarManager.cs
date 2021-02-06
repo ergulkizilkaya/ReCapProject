@@ -27,6 +27,11 @@ namespace ReCapProject.Business.Concrete
             _carDal.Add(car);
         }
 
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
@@ -38,6 +43,12 @@ namespace ReCapProject.Business.Concrete
         public List<Car> GetCarsByColorId(int v)
         {
             return _carDal.GetAll(c => c.ColorId == v);
+        }
+
+        public void Update(Car car)
+        {
+            ValidationTool.Validate(new CarValidator(), car);
+            _carDal.Update(car);
         }
     }
 }

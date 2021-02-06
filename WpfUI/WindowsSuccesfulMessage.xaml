@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfUI.WindowsSuccesfulMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfUI" Height="218" Width="405" MinHeight="218" MinWidth="405" MaxHeight="218" MaxWidth="405" KeyDown="Window_KeyDown"
+        mc:Ignorable="d" Background="#4AA252" Style="{DynamicResource CustomWindowStyle}"
+        Title="WindowsSuccesfulMessage">
+    <Grid>
+        <StackPanel Margin="15,0,0,0" Orientation="Horizontal">
+            <Viewbox Width="88" Height="88">
+
+                <Canvas Width="24" Height="24">
+                    <Path Fill="#FFEAEAEA" Data="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                </Canvas>
+            </Viewbox>
+            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                <Label Padding="0,5,5,5" FontWeight="Medium" FontSize="18" Content="Sistem Uyarısı" Name="lblDescription"></Label>
+                <TextBlock Width="280" FontSize="16" TextWrapping="Wrap" Text="Güncellemek İstediğiniz Kullanıcıyı Seçiniz." Name="lblMessage"></TextBlock>
+                <Border Cursor="Hand" MouseDown="Border_MouseDown" Background="White" HorizontalAlignment="Right" CornerRadius="15" Margin="0,0,20,0" Padding="10,0">
+                    <TextBlock FontSize="17" Text="OK" Padding="4" Foreground="#FF4AA252" FontWeight="Medium"></TextBlock>
+                </Border>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -45,8 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBrandService.cs" />
     <Compile Include="Abstract\ICarService.cs" />
+    <Compile Include="Abstract\IColorService.cs" />
+    <Compile Include="Concrete\BrandManager.cs" />
     <Compile Include="Concrete\CarManager.cs" />
+    <Compile Include="Concrete\ColorManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ValidationTool.cs" />
     <Compile Include="ValidationRules\FluentValidation\CarValidator.cs" />

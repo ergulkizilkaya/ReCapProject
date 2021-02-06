@@ -13,5 +13,7 @@ namespace ReCapProject.Business.Abstract
         List<Car> GetCarsByBrandId(int v);
         List<Car> GetCarsByColorId(int v);
         void Add(Car car);
+        void Delete(Car car);
+        void Update(Car car);
     }
 }

@@ -12,7 +12,7 @@ namespace ReCapProject.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\Mssqllocaldb;Database=FinalProjectDb;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\Mssqllocaldb;Database=recapdb;Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
 
         }
