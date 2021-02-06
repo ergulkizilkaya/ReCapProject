@@ -57,24 +57,25 @@ Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve v
 #### Car
 Variable Name | Data Type
 ------------ | -------------
-CarId | int
+Id | int
 BrandId | int
 ColorId | int
-ModelYear | string
+ModelYear | int
 DailyPrice | decimal
 Description | string
 
 #### Color
 Variable Name | Data Type
 ------------ | -------------
-ColorId | int
-ColorName | string
+Id | int
+Name | string
 
 #### Brand
 Variable Name | Data Type
 ------------ | -------------
-BrandId | int
-BrandName | string
+Id | int
+Name | string
+
 <br><br>
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107105506-d02c8280-6837-11eb-865f-b2f3b8f4e779.png)
 
