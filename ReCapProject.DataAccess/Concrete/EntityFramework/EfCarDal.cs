@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace ReCapProject.DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car, NorthwindContext>, ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, ReCapDbContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetailDtos(Expression<Func<Car, bool>> filter = null)
         {
-            using (NorthwindContext context = new NorthwindContext())
+            using (ReCapDbContext context = new ReCapDbContext())
             {
                 var result = from ca in filter is null ? context.Cars : context.Cars.Where(filter)
                              join br in context.Brands

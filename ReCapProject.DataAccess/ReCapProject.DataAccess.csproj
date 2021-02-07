@@ -162,7 +162,7 @@
     <Compile Include="Concrete\EntityFramework\EfBrandDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCarDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfColorDal.cs" />
-    <Compile Include="Concrete\EntityFramework\NorthwindContext.cs" />
+    <Compile Include="Concrete\EntityFramework\ReCapDbContext.cs" />
     <Compile Include="Concrete\InMemory\InMemoryCarDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

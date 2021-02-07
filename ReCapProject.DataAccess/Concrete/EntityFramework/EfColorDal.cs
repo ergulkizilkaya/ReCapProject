@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ReCapProject.DataAccess.Concrete.EntityFramework
 {
-    public class EfColorDal : EfEntityRepositoryBase<Color, NorthwindContext>, IColorDal
+    public class EfColorDal : EfEntityRepositoryBase<Color, ReCapDbContext>, IColorDal
     {
    
     }

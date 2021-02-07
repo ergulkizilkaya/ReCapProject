@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReCapProject.DataAccess.Concrete.EntityFramework
 {
-    public class NorthwindContext : DbContext
+    public class ReCapDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
