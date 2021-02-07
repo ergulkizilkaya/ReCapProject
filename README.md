@@ -55,7 +55,9 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access K
 
 
 ###  Core Layer
-Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities** olmak üzere iki adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.
+Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities** olmak üzere iki adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.  
+> **⚠ DİKKAT: .**  
+> Core Katmanı, diğer katmanları referans almaz.
 <br> <br> :file_folder:`DataAccess`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IEntityRepository.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/DataAccess/IEntityRepository.cs)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `EntityFramework`    
@@ -70,6 +72,7 @@ Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities**
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107106389-72e70000-683c-11eb-9717-e2a97e72c990.png)
 ### Veritabanı Oluşturma (localdb)
 Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritabanı oluşturmak için **Visual Studio 2019** için *View > SQL Server Object Explorer* menü yolunu takip edebilirsiniz.Pencere açıldıktan sonra *SQL Server > (localdb)MSSQLLocalDB* altındaki **Databases** klasörüne sağ tıklayıp Add **New Database** seçeneğini ile veritabanınızı oluşturabilirsiniz. Veritabanı oluşturulduktan sonra **New Query** seçerek aşağıda bulunan Sql File ile veritabanınızda olması gereken tabloları oluşturabilirsiniz.  
+
 <br>
 :file_folder:`Sql File`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [ReCapProjectDB.sql](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProjectDB.sql)  
