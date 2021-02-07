@@ -2,6 +2,7 @@
 using ReCapProject.Business.Concrete;
 using ReCapProject.DataAccess.Concrete.EntityFramework;
 using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,10 +37,12 @@ namespace WpfUI
         IBrandService _brandService;
         Car _selectedCar;
         List<Car> cars;
+        List<CarDetailDto> carsDto;
         void LoadCars()
         {
             cars = _carService.GetAll();
-            lvCars.ItemsSource = cars;
+            carsDto = _carService.GetCarDetailDto();
+            lvCars.ItemsSource = carsDto;
             lvCarsUpdate.ItemsSource = cars;
         }
         void LoadColors()
@@ -168,7 +171,7 @@ namespace WpfUI
             if (!(lvCars.SelectedItem is null))
             {
                 tabControl.SelectedIndex = 2;
-                _selectedCar = lvCars.SelectedItem as Car;
+                _selectedCar = cars.FirstOrDefault(x=>x.Id==(lvCars.SelectedItem as CarDetailDto).Id); 
                 lvCarsUpdate.SelectedItem = _selectedCar;
             }
 
@@ -181,7 +184,7 @@ namespace WpfUI
                 var result = MessageBox.Show("Seçilen Araç Kaydı Silinecektir. Onaylıyor Musunuz ?", "Dikkat", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    _carService.Delete(lvCars.SelectedItem as Car);
+                    _carService.Delete(cars.FirstOrDefault(x => x.Id == (lvCars.SelectedItem as CarDetailDto).Id));
                     LoadCars();
                     ShowCount();
                 }

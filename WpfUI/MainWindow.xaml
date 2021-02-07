@@ -90,8 +90,8 @@
                                 <GridView >
                                     <GridViewColumn Width="40"   Header="Id"  DisplayMemberBinding="{Binding Id}" />
                                     <GridViewColumn Width="170"  Header="Araç Adı" DisplayMemberBinding="{Binding Name}"/>
-                                    <GridViewColumn Width="80" Header="BrandId" DisplayMemberBinding="{Binding BrandId}" />
-                                    <GridViewColumn Width="80" Header="ColorId"  DisplayMemberBinding="{Binding ColorId}" />
+                                    <GridViewColumn Width="80" Header="Marka" DisplayMemberBinding="{Binding BrandName}" />
+                                    <GridViewColumn Width="80" Header="Renk"  DisplayMemberBinding="{Binding ColorName}" />
                                     <GridViewColumn Width="100" Header="Günlük Fiyat" DisplayMemberBinding="{Binding DailyPrice}" />
                                     <GridViewColumn Width="85" Header="Model Yılı"  DisplayMemberBinding="{Binding ModelYear}" />
                                     <GridViewColumn Width="176" Header="Açıklama"  DisplayMemberBinding="{Binding Description}" />

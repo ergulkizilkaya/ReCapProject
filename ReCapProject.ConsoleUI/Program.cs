@@ -3,6 +3,7 @@ using ReCapProject.Business.Concrete;
 using ReCapProject.DataAccess.Concrete.EntityFramework;
 using ReCapProject.DataAccess.Concrete.InMemory;
 using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace ReCapProject.ConsoleUI
         }
         static void GetCarsByBrandId()
         {
-            List<Car> cars = _carService.GetCarsByBrandId(4);
+            List<CarDetailDto> cars = _carService.GetCarsByBrandId(4);
             foreach (var car in cars)
             {
                 Console.WriteLine(String.Format($"Id : {car.Id}, Name : {car.Name}, BrandId : {car.ColorId}"));
@@ -57,7 +58,7 @@ namespace ReCapProject.ConsoleUI
         }
         static void GetCarsByColorId()
         {
-            List<Car> cars = _carService.GetCarsByColorId(8);
+            List<CarDetailDto> cars = _carService.GetCarsByColorId(8);
             foreach (var car in cars)
             {
                 Console.WriteLine(String.Format($"Id : {car.Id}, Name : {car.Name}, ColorId : {car.ColorId}"));

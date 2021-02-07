@@ -1,4 +1,5 @@
-﻿using ReCapProject.Entities.Concrete;
+﻿using Core.DataAccess;
+using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

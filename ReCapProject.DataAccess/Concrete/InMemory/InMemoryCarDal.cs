@@ -1,5 +1,6 @@
 ﻿using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,12 @@ namespace ReCapProject.DataAccess.Concrete.InMemory
         {
             return null;
         }
+
+        public List<CarDetailDto> GetCarDetailDtos(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Car car)
         {
             Car _updateToCar = _carList.FirstOrDefault(c => c.Id == car.Id);

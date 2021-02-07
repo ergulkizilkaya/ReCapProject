@@ -83,6 +83,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{C6A1C2A5-5D84-4B36-8D88-D9A0FEDAA78D}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReCapProject.Business\ReCapProject.Business.csproj">
       <Project>{73BDFDC5-342C-4F73-8336-12D02778C234}</Project>
       <Name>ReCapProject.Business</Name>

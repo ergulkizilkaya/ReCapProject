@@ -3,6 +3,7 @@ using ReCapProject.Business.Utilities;
 using ReCapProject.Business.ValidationRules.FluentValidation;
 using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,13 +37,19 @@ namespace ReCapProject.Business.Concrete
         {
             return _carDal.GetAll();
         }
-        public List<Car> GetCarsByBrandId(int v)
+
+        public List<CarDetailDto> GetCarDetailDto()
         {
-            return _carDal.GetAll(c=>c.BrandId==v);
+            return _carDal.GetCarDetailDtos();
         }
-        public List<Car> GetCarsByColorId(int v)
+
+        public List<CarDetailDto> GetCarsByBrandId(int v)
         {
-            return _carDal.GetAll(c => c.ColorId == v);
+            return _carDal.GetCarDetailDtos(x=>x.BrandId == v);
+        }
+        public List<CarDetailDto> GetCarsByColorId(int v)
+        {
+            return _carDal.GetCarDetailDtos(x => x.ColorId == v);
         }
 
         public void Update(Car car)

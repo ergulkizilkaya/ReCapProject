@@ -60,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{C6A1C2A5-5D84-4B36-8D88-D9A0FEDAA78D}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReCapProject.DataAccess\ReCapProject.DataAccess.csproj">
       <Project>{FE5EF41B-4E36-45D7-93FF-25FB1220BDE5}</Project>
       <Name>ReCapProject.DataAccess</Name>
