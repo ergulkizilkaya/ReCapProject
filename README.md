@@ -49,6 +49,24 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access K
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `InMemory`    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [InMemoryCarDal.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProject.DataAccess/Concrete/InMemory/InMemoryCarDal.cs)  
 <br>
+
+![bitssmap](https://user-images.githubusercontent.com/77868230/107132824-5fe33700-68f3-11eb-823e-d0737720be07.png)
+
+
+
+###  Core Layer
+Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities** olmak üzere iki adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.
+<br> <br> :file_folder:`DataAccess`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IEntityRepository.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/DataAccess/IEntityRepository.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `EntityFramework`    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [EfEntityRepositoryBase.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/DataAccess/EntityFramework/EfEntityRepositoryBase.cs)  
+<br> :file_folder:`Entities`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IEntity.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Entities/IEntity.cs)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IDto.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Entities/IDto.cs)   
+<br>
+
+
+
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107106389-72e70000-683c-11eb-9717-e2a97e72c990.png)
 ### Veritabanı Oluşturma (localdb)
 Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritabanı oluşturmak için **Visual Studio 2019** için *View > SQL Server Object Explorer* menü yolunu takip edebilirsiniz.Pencere açıldıktan sonra *SQL Server > (localdb)MSSQLLocalDB* altındaki **Databases** klasörüne sağ tıklayıp Add **New Database** seçeneğini ile veritabanınızı oluşturabilirsiniz. Veritabanı oluşturulduktan sonra **New Query** seçerek aşağıda bulunan Sql File ile veritabanınızda olması gereken tabloları oluşturabilirsiniz.  
@@ -107,8 +125,8 @@ FluentValidation 7.3.3
 ```
 ## :computer:ScreenShots
 Projenin çalışma anına ait ekran görüntüleri  <br> <br>
-![image](https://user-images.githubusercontent.com/77868230/107121347-f1768880-68a2-11eb-889a-c410e6833c0a.png)  
-![image](https://user-images.githubusercontent.com/77868230/107121367-0bb06680-68a3-11eb-8ea8-65504ef18b07.png)  
+![image](https://user-images.githubusercontent.com/77868230/107132340-11339e00-68ef-11eb-92e0-7be47ca85e2a.png)
+![image](https://user-images.githubusercontent.com/77868230/107132348-21e41400-68ef-11eb-9950-9af486248bd9.png) 
 ![image](https://user-images.githubusercontent.com/77868230/107121391-37335100-68a3-11eb-9232-c4d5d5a2d29c.png)  
 ![image](https://user-images.githubusercontent.com/77868230/107121405-4914f400-68a3-11eb-9c90-3e75f68bab64.png)  
 ## :pencil2:Authors
