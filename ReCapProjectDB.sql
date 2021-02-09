@@ -10,7 +10,7 @@ CREATE TABLE Brands(
 
 CREATE TABLE Cars(
 	Id int PRIMARY KEY IDENTITY(1,1),
-	Name nvarchar(50)
+	Name nvarchar(50),
 	BrandId int,
 	ColorId int,
 	DailyPrice decimal,
