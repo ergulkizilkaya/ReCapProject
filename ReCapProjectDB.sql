@@ -15,7 +15,7 @@ CREATE TABLE Cars(
 	ColorId int,
 	DailyPrice decimal,
 	ModelYear int,
-	Descriptions nvarchar(50),
+	Description nvarchar(50),
 	FOREIGN KEY (ColorId) REFERENCES Colors(Id),
 	FOREIGN KEY (BrandId) REFERENCES Brands(Id)
 
