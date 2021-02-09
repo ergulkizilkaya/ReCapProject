@@ -1,11 +1,11 @@
 ﻿CREATE TABLE Colors(
 	Id int PRIMARY KEY IDENTITY(1,1),
-	[Name] nvarchar(25),
+	[Name] nvarchar(50),
 )
 
 CREATE TABLE Brands(
 	Id int PRIMARY KEY IDENTITY(1,1),
-	[Name] nvarchar(25),
+	[Name] nvarchar(50),
 )
 
 CREATE TABLE Cars(
