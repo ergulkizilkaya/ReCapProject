@@ -74,7 +74,7 @@ Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities**
 Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritabanı oluşturmak için **Visual Studio 2019** için *View > SQL Server Object Explorer* menü yolunu takip edebilirsiniz.Pencere açıldıktan sonra *SQL Server > (localdb)MSSQLLocalDB* altındaki **Databases** klasörüne sağ tıklayıp Add **New Database** seçeneğini ile veritabanınızı oluşturabilirsiniz. Veritabanı oluşturulduktan sonra **New Query** seçerek aşağıda bulunan Sql File ile veritabanınızda olması gereken tabloları oluşturabilirsiniz.  
 <br>
 :file_folder:`Sql File`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [ReCapProjectDB.sql](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProjectDB.sql)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [RecapProjectDb.sql](https://github.com/ergulkizilkaya/ReCapProject/blob/master/RecapProjectDb.sql)  
 <br>
 ## Tables
 Veritabanı tablolarınızı manuel de oluşturabilirsiniz. Tablolar,sutün ve veri tipleri hakkında bilgiler aşağıda listelenmiştir.   
