@@ -1,0 +1,26 @@
+﻿<Window x:Class="ReCapProject.WpfUI.WindowErrorMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReCapProject.WpfUI"
+        Style="{DynamicResource CustomWindowStyle}" MinHeight="218" MinWidth="465" MaxHeight="218" MaxWidth="465"  KeyDown="Window_KeyDown"
+        mc:Ignorable="d" Background="#C4392A" WindowStartupLocation="CenterScreen" Height="218" Width="465"
+        Title="Hata" >
+    <Grid>
+        <StackPanel Margin="15,0,0,0" Orientation="Horizontal">
+            <Viewbox Width="88" Height="88">
+                <Canvas Width="24" Height="24">
+                    <Path Fill="#FFEAEAEA" Data="M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M11,7H13V13H11V7M11,15H13V17H11V15Z" />
+                </Canvas>
+            </Viewbox>
+            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                <Label Padding="0,5,5,5" FontWeight="Medium" FontSize="18" Content="Sistem Uyarısı" Name="lblDescription"></Label>
+                <TextBlock Width="320" FontSize="16" TextWrapping="Wrap" Text="" Name="lblMessage"></TextBlock>
+                <Border Cursor="Hand" MouseDown="Border_MouseDown" Background="White" HorizontalAlignment="Right" CornerRadius="10" Margin="0,10,5,0" Padding="10,0">
+                    <TextBlock FontSize="17" Text="OK" Padding="4" Foreground="#FFC4392A" FontWeight="Medium"></TextBlock>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
