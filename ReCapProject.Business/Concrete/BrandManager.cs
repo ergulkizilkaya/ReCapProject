@@ -1,11 +1,10 @@
 ﻿using ReCapProject.Business.Abstract;
-using ReCapProject.DataAccess.Abstract;
+
 using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using ReCapProject.DataAccess.Abstract;
 
 namespace ReCapProject.Business.Concrete
 {
@@ -18,7 +17,7 @@ namespace ReCapProject.Business.Concrete
             _brandDal = brandDal;
         }
 
-        public List<Brand> GetBrands()
+        public List<Brand> GetAll()
         {
             return _brandDal.GetAll();
         }

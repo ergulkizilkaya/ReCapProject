@@ -1,77 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73BDFDC5-342C-4F73-8336-12D02778C234}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReCapProject.Business</RootNamespace>
-    <AssemblyName>ReCapProject.Business</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.7.3.3\lib\net45\FluentValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="FluentValidation" Version="7.3.3" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Abstract\IBrandService.cs" />
-    <Compile Include="Abstract\ICarService.cs" />
-    <Compile Include="Abstract\IColorService.cs" />
-    <Compile Include="Concrete\BrandManager.cs" />
-    <Compile Include="Concrete\CarManager.cs" />
-    <Compile Include="Concrete\ColorManager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\ValidationTool.cs" />
-    <Compile Include="ValidationRules\FluentValidation\CarValidator.cs" />
+    <ProjectReference Include="..\ReCapProject.DataAccess\ReCapProject.DataAccess.csproj" />
+    <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{C6A1C2A5-5D84-4B36-8D88-D9A0FEDAA78D}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReCapProject.DataAccess\ReCapProject.DataAccess.csproj">
-      <Project>{FE5EF41B-4E36-45D7-93FF-25FB1220BDE5}</Project>
-      <Name>ReCapProject.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj">
-      <Project>{4E0D9351-C0FC-49F6-8AD5-3195B347E213}</Project>
-      <Name>ReCapProject.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

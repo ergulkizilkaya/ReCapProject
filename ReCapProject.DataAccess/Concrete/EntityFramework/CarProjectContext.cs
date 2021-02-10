@@ -1,20 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ReCapProject.Entities.Concrete;
+﻿using ReCapProject.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ReCapProject.DataAccess.Concrete.EntityFramework
 {
-    public class ReCapDbContext : DbContext
+    public class CarProjectContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\Mssqllocaldb;Database=recapdb;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server = (localdb)\MSSQLLocalDb; Database = recapdb; Trusted_Connection=true");
             base.OnConfiguring(optionsBuilder);
-
         }
 
         public DbSet<Car> Cars { get; set; }

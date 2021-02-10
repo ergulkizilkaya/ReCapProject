@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfUI.Properties
+namespace ReCapProject.WpfUI.Properties
 {
 
 

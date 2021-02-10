@@ -1,21 +1,18 @@
-﻿using ReCapProject.Business.Abstract;
+﻿using ReCapProject.DataAccess.Abstract;
+using ReCapProject.Business.Abstract;
 using ReCapProject.Business.Utilities;
 using ReCapProject.Business.ValidationRules.FluentValidation;
-using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
 using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ReCapProject.Business.Concrete
 {
     public class CarManager : ICarService
     {
-
-        private ICarDal _carDal;
+        ICarDal _carDal;
 
         public CarManager(ICarDal carDal)
         {
@@ -24,12 +21,13 @@ namespace ReCapProject.Business.Concrete
 
         public void Add(Car car)
         {
-            ValidationTool.Validate(new CarValidator(),car);
+            ValidationTool.Validate(new CarValidator(), car);
             _carDal.Add(car);
         }
 
         public void Delete(Car car)
         {
+            
             _carDal.Delete(car);
         }
 
@@ -38,18 +36,19 @@ namespace ReCapProject.Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<CarDetailDto> GetCarDetailDto()
+        public List<CarDetailDto> GetCarDetails()
         {
-            return _carDal.GetCarDetailDtos();
+            return _carDal.GetCarDetails();
         }
 
-        public List<CarDetailDto> GetCarsByBrandId(int v)
+        public List<CarDetailDto> GetCarsByBrandId(int p)
         {
-            return _carDal.GetCarDetailDtos(x=>x.BrandId == v);
+            return _carDal.GetCarDetails(c=>c.BrandId ==  p);
         }
-        public List<CarDetailDto> GetCarsByColorId(int v)
+
+        public List<CarDetailDto> GetCarsByColorId(int p)
         {
-            return _carDal.GetCarDetailDtos(x => x.ColorId == v);
+            return _carDal.GetCarDetails(c => c.ColorId == p);
         }
 
         public void Update(Car car)

@@ -1,21 +1,17 @@
-﻿using FluentValidation;
-using ReCapProject.Entities.Concrete;
+﻿using ReCapProject.Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ReCapProject.Business.ValidationRules.FluentValidation
 {
-    class CarValidator : AbstractValidator<Car>
+    public class CarValidator:AbstractValidator<Car>
     {
         public CarValidator()
         {
-            RuleFor(c => c.DailyPrice).GreaterThan(0).WithMessage("Araba günlük fiyatı 0'dan büyük olmalıdır.");
-            RuleFor(c => c.Name).MinimumLength(2).WithMessage("Araba ismi minimum 2 karakter olmalıdır");
-
+            RuleFor(x => x.Name).MinimumLength(2).WithMessage("Araç adı en az 2 karakter uzunluğunda olmalıdır.");
+            RuleFor(x => x.DailyPrice).GreaterThan(0).WithMessage("Aracın günlük fiyatı 0'dan büyük olmalıdır.");
         }
-       
     }
 }

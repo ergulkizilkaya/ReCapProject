@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfUI
+namespace ReCapProject.WpfUI
 {
     /// <summary>
     /// MainWindow.xaml etkileşim mantığı
@@ -41,13 +41,13 @@ namespace WpfUI
         void LoadCars()
         {
             cars = _carService.GetAll();
-            carsDto = _carService.GetCarDetailDto();
+            carsDto = _carService.GetCarDetails();
             lvCars.ItemsSource = carsDto;
             lvCarsUpdate.ItemsSource = cars;
         }
         void LoadColors()
         {
-            List<ReCapProject.Entities.Concrete.Color> colors = _colorService.GetColors();
+            List<Entities.Concrete.Color> colors = _colorService.GetAll();
 
             cbxColors.ItemsSource = colors;
             cbxColors.DisplayMemberPath = "Name";
@@ -63,7 +63,7 @@ namespace WpfUI
         }
         void LoadBrands()
         {
-            List<ReCapProject.Entities.Concrete.Brand> brands = _brandService.GetBrands();
+            List<Brand> brands = _brandService.GetAll();
 
             cbxBrands.ItemsSource = brands;
             cbxBrands.DisplayMemberPath = "Name";
@@ -171,7 +171,7 @@ namespace WpfUI
             if (!(lvCars.SelectedItem is null))
             {
                 tabControl.SelectedIndex = 2;
-                _selectedCar = cars.FirstOrDefault(x=>x.Id==(lvCars.SelectedItem as CarDetailDto).Id); 
+                _selectedCar = cars.FirstOrDefault(x => x.Id == (lvCars.SelectedItem as CarDetailDto).Id);
                 lvCarsUpdate.SelectedItem = _selectedCar;
             }
 
@@ -205,19 +205,21 @@ namespace WpfUI
                     _selectedCar.Description = tbxUpdateDescription.Text;
                     _selectedCar.Name = tbxUpdatedName.Text;
                     _carService.Update(_selectedCar);
-                    WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Güncelleme İşlemi Başarılı");
-                    success.ShowDialog();
+                    /*  WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Güncelleme İşlemi Başarılı");
+                      success.ShowDialog();*/
+                    MessageBox.Show("Araç Güncelleme İşlemi Başarılı");
                     LoadCars();
                     ClearUpdateField();
                     _selectedCar = null;
                     tbxSearch.Text = null;
 
-                    
+
                 }
                 catch (Exception ex)
                 {
-                    WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı",ex.Message);
-                    error.ShowDialog();
+                    /* WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", ex.Message);
+                     error.ShowDialog();*/
+                    MessageBox.Show(ex.Message);
                 }
 
             }
@@ -246,8 +248,9 @@ namespace WpfUI
                     Name = tbxName.Text
                 };
                 _carService.Add(car);
-                WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Kayıt İşlemi Başarılı");
-                success.ShowDialog();
+                /* WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Kayıt İşlemi Başarılı");
+                 success.ShowDialog();*/
+                MessageBox.Show("Araç Kayıt İşlemi Başarılı");
                 LoadCars();
                 ShowCount();
                 ClearInsertField();
@@ -255,14 +258,17 @@ namespace WpfUI
             }
             catch (NullReferenceException)
             {
-                WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", "Kayıt başarısız, girdiğiniz bilgileri kontrol ediniz.");
-                error.ShowDialog();
-           
+                /* WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", "Kayıt başarısız, girdiğiniz bilgileri kontrol ediniz.");
+                 error.ShowDialog();*/
+
+                MessageBox.Show("Kayıt başarısız, girdiğiniz bilgileri kontrol ediniz.");
+
             }
             catch (Exception ex)
             {
-                WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", ex.Message);
-                error.ShowDialog();
+                /* WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", ex.Message);
+                 error.ShowDialog();*/
+                MessageBox.Show(ex.Message);
             }
 
         }

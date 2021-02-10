@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfUI
+namespace ReCapProject.WpfUI
 {
     /// <summary>
     /// App.xaml etkileşim mantığı

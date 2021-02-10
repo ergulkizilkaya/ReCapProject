@@ -3,9 +3,7 @@ using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ReCapProject.Business.Concrete
 {
@@ -18,7 +16,7 @@ namespace ReCapProject.Business.Concrete
             _colorDal = colorDal;
         }
 
-        public List<Color> GetColors()
+        public List<Color> GetAll()
         {
             return _colorDal.GetAll();
         }
