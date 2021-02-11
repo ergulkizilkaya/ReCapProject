@@ -32,7 +32,7 @@ CREATE TABLE Users(
 	FirstName nvarchar(50),
 	LastName nvarchar(50),
 	Email nvarchar(50),
-	Password(50)nvarchar(50)
+	Password nvarchar(50)
 )
 
 CREATE TABLE Rentals(
