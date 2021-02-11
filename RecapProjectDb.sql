@@ -31,7 +31,8 @@ CREATE TABLE Users(
 	Id int PRIMARY KEY IDENTITY(1,1),
 	FirstName nvarchar(50),
 	LastName nvarchar(50),
-	Email Password(50)
+	Email nvarchar(50),
+	Password(50)nvarchar(50)
 )
 
 CREATE TABLE Rentals(
