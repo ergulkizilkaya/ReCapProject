@@ -54,7 +54,7 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access K
 
 
 ###  Core Layer
-Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities** olmak üzere iki adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.  
+Bir framework katmanı olan **Core Katmanı**'nda **DataAccess**, **Entities**, **Utilities** olmak üzere 3 adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.  
 > **⚠ DİKKAT: .**  
 > Core Katmanı, diğer katmanları referans almaz.
 <br> <br> :file_folder:`DataAccess`  
@@ -63,10 +63,20 @@ Bir framework katmanı olan **Core Katmanı**'nda **DataAccess** ve **Entities**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [EfEntityRepositoryBase.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/DataAccess/EntityFramework/EfEntityRepositoryBase.cs)  
 <br> :file_folder:`Entities`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IEntity.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Entities/IEntity.cs)   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IDto.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Entities/IDto.cs)   
-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IDto.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Entities/IDto.cs)  
 
-
+:file_folder:`Utilities`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `Results`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `Abstract`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Abstract/IResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [IDataResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Abstract/IDataResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `Concrete`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [DataResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/DataResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [ErrorDataResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/ErrorDataResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [ErrorResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/ErrorResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [Result.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/Result.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [SuccessDataResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/SuccessDataResult.cs)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [SuccessResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/SuccessDataResult.cs)  
 
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107106389-72e70000-683c-11eb-9717-e2a97e72c990.png)
 ### Veritabanı Oluşturma (localdb)
@@ -118,6 +128,52 @@ Name | nvarchar(50)
 
 
 <br><br>
+
+<table>
+  <tr>
+    <td>Users</td>
+     <td>Customers</td>
+     <td>Rentals</td>
+  </tr>
+  <tr>
+    <td>
+
+Variable | Data Type
+------------ | -------------
+Id | int
+Firstname | nvarchar(50)
+LastName | nvarchar(50)
+Email | nvarchar(50)
+Password | nvarchar(50)
+   
+   </td>
+    <td>
+
+Variable | Data Type
+------------ | -------------
+Id | int
+UserId | int
+CompanyName | nvarchar(50)
+   
+   </td>
+    <td>
+
+Variable | Data Type
+------------ | -------------
+Id | int
+CarId | int
+CustomerId | int
+RentDate | datetime
+ReturnDate | datetime
+
+   
+   </td>
+  </tr>
+ </table>
+
+
+<br><br>
+
 ![rect1510-4](https://user-images.githubusercontent.com/77868230/107105506-d02c8280-6837-11eb-865f-b2f3b8f4e779.png)
 
 ```
