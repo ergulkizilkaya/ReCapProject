@@ -7,6 +7,10 @@ using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
+using System.Linq;
+using ReCapProject.Business.Constants;
 
 namespace ReCapProject.Business.Concrete
 {
@@ -19,42 +23,53 @@ namespace ReCapProject.Business.Concrete
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            ValidationTool.Validate(new CarValidator(), car);
+            var validationResult = ValidationTool.Validate(new CarValidator(), car);
+            if (validationResult.Errors.Count > 0)
+            {
+                return new ErrorResult(validationResult.Errors.Select(x => x.ErrorMessage).Aggregate((a, b) => $"--{a}\n--{b}"));
+            }
             _carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
-            
             _carDal.Delete(car);
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
-        public List<CarDetailDto> GetCarsByBrandId(int p)
+        public IDataResult<List<CarDetailDto>> GetCarsByBrandId(int p)
         {
-            return _carDal.GetCarDetails(c=>c.BrandId ==  p);
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(c => c.BrandId == p));
         }
 
-        public List<CarDetailDto> GetCarsByColorId(int p)
+        public IDataResult<List<CarDetailDto>> GetCarsByColorId(int p)
         {
-            return _carDal.GetCarDetails(c => c.ColorId == p);
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(c => c.ColorId == p));
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
-            ValidationTool.Validate(new CarValidator(), car);
+            var validationResult = ValidationTool.Validate(new CarValidator(), car);
+            if (validationResult.Errors.Count > 0)
+            {
+                return new Result(false, validationResult.Errors.Select(x=>x.ErrorMessage).Aggregate((a,b)=>$"--{a}\n--{b}"));
+            }
             _carDal.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
+
         }
     }
 }

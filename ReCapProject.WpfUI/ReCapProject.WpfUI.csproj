@@ -179,6 +179,15 @@
     <Compile Include="WindowErrorMessage.xaml.cs">
       <DependentUpon>WindowErrorMessage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowRental.xaml.cs">
+      <DependentUpon>WindowRental.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowRentalDetails.xaml.cs">
+      <DependentUpon>WindowRentalDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSettings.xaml.cs">
+      <DependentUpon>WindowSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowsSuccesfulMessage.xaml.cs">
       <DependentUpon>WindowsSuccesfulMessage.xaml</DependentUpon>
     </Compile>
@@ -199,6 +208,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WindowErrorMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowRental.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowRentalDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -254,6 +275,12 @@
       <Project>{3EEF8EA8-D130-4E04-BA80-2C0D1E796BD4}</Project>
       <Name>ReCapProject.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\car_illustration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_illustration.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

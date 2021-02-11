@@ -31,7 +31,10 @@ namespace ReCapProject.WpfUI
             _carService = new CarManager(new EfCarDal());
             _colorService = new ColorManager(new EfColorDal());
             _brandService = new BrandManager(new EfBrandDal());
+            _rentalService = new RentalManager(new EfRentalDal());
+
         }
+        IRentalService _rentalService;
         ICarService _carService;
         IColorService _colorService;
         IBrandService _brandService;
@@ -40,14 +43,14 @@ namespace ReCapProject.WpfUI
         List<CarDetailDto> carsDto;
         void LoadCars()
         {
-            cars = _carService.GetAll();
-            carsDto = _carService.GetCarDetails();
+            cars = _carService.GetAll().Data;
+            carsDto = _carService.GetCarDetails().Data;
             lvCars.ItemsSource = carsDto;
             lvCarsUpdate.ItemsSource = cars;
         }
         void LoadColors()
         {
-            List<Entities.Concrete.Color> colors = _colorService.GetAll();
+            List<Entities.Concrete.Color> colors = _colorService.GetAll().Data;
 
             cbxColors.ItemsSource = colors;
             cbxColors.DisplayMemberPath = "Name";
@@ -56,14 +59,17 @@ namespace ReCapProject.WpfUI
             cbxUpdateColor.ItemsSource = colors;
             cbxUpdateColor.DisplayMemberPath = "Name";
             cbxUpdateColor.SelectedValuePath = "Id";
+            cbxUpdateColor.SelectedIndex = 0;
+
 
             cbxColors_Add.ItemsSource = colors;
             cbxColors_Add.DisplayMemberPath = "Name";
             cbxColors_Add.SelectedValuePath = "Id";
+            cbxColors_Add.SelectedIndex = 0;
         }
         void LoadBrands()
         {
-            List<Brand> brands = _brandService.GetAll();
+            List<Brand> brands = _brandService.GetAll().Data;
 
             cbxBrands.ItemsSource = brands;
             cbxBrands.DisplayMemberPath = "Name";
@@ -72,14 +78,16 @@ namespace ReCapProject.WpfUI
             cbxUpdateBrand.ItemsSource = brands;
             cbxUpdateBrand.DisplayMemberPath = "Name";
             cbxUpdateBrand.SelectedValuePath = "Id";
+            cbxUpdateBrand.SelectedIndex = 0;
 
             cbxBrands_Add.ItemsSource = brands;
             cbxBrands_Add.DisplayMemberPath = "Name";
             cbxBrands_Add.SelectedValuePath = "Id";
+            cbxBrands_Add.SelectedIndex = 0;
 
         }
-        void GetCarsByColorId(int colorId) => lvCars.ItemsSource = _carService.GetCarsByColorId(colorId);
-        void GetCarsByBrandId(int brandId) => lvCars.ItemsSource = _carService.GetCarsByBrandId(brandId);
+        void GetCarsByColorId(int colorId) => lvCars.ItemsSource = _carService.GetCarsByColorId(colorId).Data;
+        void GetCarsByBrandId(int brandId) => lvCars.ItemsSource = _carService.GetCarsByBrandId(brandId).Data;
         void ShowCount() => lblCarsCount.Content = lvCars.Items.Count;
         void SetUpdateField()
         {
@@ -89,6 +97,9 @@ namespace ReCapProject.WpfUI
             tbxUpdateModelYear.Text = _selectedCar.ModelYear.ToString();
             cbxUpdateBrand.SelectedValue = _selectedCar.BrandId;
             cbxUpdateColor.SelectedValue = _selectedCar.ColorId;
+
+            spUpdateField.IsEnabled = true;
+            spUpdateField.Opacity = 1;
         }
         void ClearUpdateField()
         {
@@ -96,8 +107,9 @@ namespace ReCapProject.WpfUI
             tbxUpdateDescription.Text = null;
             tbxUpdatedName.Text = null;
             tbxUpdateModelYear.Text = null;
-            cbxUpdateBrand.SelectedIndex = -1;
-            cbxUpdateColor.SelectedIndex = -1;
+
+            spUpdateField.IsEnabled = false;
+            spUpdateField.Opacity = 0.3;
         }
         void ClearInsertField()
         {
@@ -105,8 +117,6 @@ namespace ReCapProject.WpfUI
             tbxDescription.Text = null;
             tbxName.Text = null;
             tbxModelYear.Text = null;
-            cbxBrands_Add.SelectedIndex = -1;
-            cbxColors_Add.SelectedIndex = -1;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -114,6 +124,7 @@ namespace ReCapProject.WpfUI
             LoadColors();
             LoadBrands();
             ShowCount();
+            ClearUpdateField();
         }
 
         private void CbxColors_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -196,31 +207,31 @@ namespace ReCapProject.WpfUI
         {
             if (!(_selectedCar is null))
             {
-                try
-                {
                     _selectedCar.BrandId = (int)cbxUpdateBrand.SelectedValue;
                     _selectedCar.ColorId = (int)cbxUpdateColor.SelectedValue;
                     _selectedCar.DailyPrice = Convert.ToDecimal(tbxUpdateDailyPrice.Text);
                     _selectedCar.ModelYear = Convert.ToInt32(tbxUpdateModelYear.Text);
                     _selectedCar.Description = tbxUpdateDescription.Text;
                     _selectedCar.Name = tbxUpdatedName.Text;
-                    _carService.Update(_selectedCar);
-                     WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Güncelleme İşlemi Başarılı");
-                      success.ShowDialog();
-                   
+
+                    var result = _carService.Update(_selectedCar);
+                    if (result.Success)
+                    {
+                        WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı",result.Message);
+                        success.ShowDialog();
+                        LoadCars();
+                        ShowCount();
+                        ClearInsertField();
+                    }
+                    else
+                    {
+                        WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", result.Message);
+                        error.ShowDialog();
+                    }
                     LoadCars();
                     ClearUpdateField();
                     _selectedCar = null;
                     tbxSearch.Text = null;
-
-
-                }
-                catch (Exception ex)
-                {
-                     WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", ex.Message);
-                     error.ShowDialog();
-                   
-                }
 
             }
         }
@@ -236,39 +247,38 @@ namespace ReCapProject.WpfUI
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            try
+            decimal dailyprice=0;
+            decimal.TryParse(tbxDailyPrice.Text, out dailyprice);
+
+            int modelYear = 0;
+            int.TryParse(tbxModelYear.Text, out modelYear);
+
+            Car car = new Car
             {
-                Car car = new Car
-                {
-                    BrandId = (int)cbxBrands_Add.SelectedValue,
-                    ColorId = (int)cbxColors_Add.SelectedValue,
-                    DailyPrice = Convert.ToDecimal(tbxDailyPrice.Text),
-                    Description = tbxDescription.Text,
-                    ModelYear = Convert.ToInt32(tbxModelYear.Text),
-                    Name = tbxName.Text
-                };
-                _carService.Add(car);
-                 WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", "Araç Kayıt İşlemi Başarılı");
-                 success.ShowDialog();
-               
+                BrandId = (int)cbxBrands_Add.SelectedValue,
+                ColorId = (int)cbxColors_Add.SelectedValue,
+                DailyPrice = dailyprice,
+                ModelYear = modelYear,
+                Description = tbxDescription.Text,
+                Name = tbxName.Text
+            };
+            var result = _carService.Add(car);
+            if (result.Success)
+            {
+                WindowsSuccesfulMessage success = new WindowsSuccesfulMessage("Başarılı", result.Message);
+                success.ShowDialog();
                 LoadCars();
                 ShowCount();
                 ClearInsertField();
-
             }
-            catch (NullReferenceException)
+            else
             {
-                 WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", "Kayıt başarısız, girdiğiniz bilgileri kontrol ediniz.");
-                 error.ShowDialog();
+                WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", result.Message);
+                error.ShowDialog();
+            }
 
-               
-            }
-            catch (Exception ex)
-            {
-                 WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", ex.Message);
-                 error.ShowDialog();
-             
-            }
+
+
 
         }
 
@@ -279,6 +289,56 @@ namespace ReCapProject.WpfUI
             lvCarsUpdate.ItemsSource = string.IsNullOrEmpty(tbxSearch.Text)
                                        ? cars
                                        : cars.Where(x => x.Name.ToLower().Contains(tbxSearch.Text.ToLower())).ToList();
+        }
+
+        private void BtnOptions_Click(object sender, RoutedEventArgs e)
+        {
+            WindowSettings settings = new WindowSettings();
+            settings.ShowDialog();
+            LoadBrands();
+            LoadColors();
+            LoadCars();
+            ClearInsertField();
+            ClearUpdateField();
+            ShowCount();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button senderButton = sender as Button;
+            var result = _rentalService.CheckReturnDate(int.Parse(senderButton.Tag.ToString()));
+
+            if(result.Success)
+            {
+                WindowRental rental = new WindowRental(carsDto.FirstOrDefault(x => x.Id == int.Parse(senderButton.Tag.ToString())));
+                rental.ShowDialog();
+            }
+            else
+            {
+                WindowErrorMessage error = new WindowErrorMessage("Sistem Mesajı","Seçilen Araç Henüz Teslim Edilmediği İçin Kiraya Verme İşlemi Yapılamaz.");
+                error.ShowDialog();
+            }
+
+           
+         
+        }
+
+        private void BtnShowRental_Click(object sender, RoutedEventArgs e)
+        {
+            Button senderButton = sender as Button;
+            var result = _rentalService.CheckReturnDate(int.Parse(senderButton.Tag.ToString()));
+
+
+                WindowRentalDetails rental = new WindowRentalDetails(carsDto.FirstOrDefault(x => x.Id == int.Parse(senderButton.Tag.ToString())));
+                rental.ShowDialog();
+          
+
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

@@ -6,11 +6,8 @@ using System.Text;
 
 namespace ReCapProject.Business.Abstract
 {
-    public interface IBrandService
+    public interface ICustomerService
     {
-        IDataResult<List<Brand>> GetAll();
-        IResult Add(Brand brand);
-        IResult Update(Brand brand);
-        IResult Delete(Brand brand);
+        IDataResult<List<Customer>> GetAll();
     }
 }

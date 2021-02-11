@@ -4,25 +4,77 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReCapProject.WpfUI"
-       MinWidth="763" MinHeight="663"
+       MinWidth="783" MinHeight="668"
         mc:Ignorable="d" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
         Style="{DynamicResource CustomWindowStyle}"
-        Title="ReCap Project" Height="450" Width="800" Icon="Resources/logo.png">  <Grid>
+        Title="ReCap Project" Height="455" Width="820" Icon="Resources/logo.png">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="105"/>
+            <RowDefinition Height="113"/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="2" Background="#FF007ACC">
             <Grid>
-                <Label HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="15" Foreground="White" Content="Yazılım Geliştirici Yetiştirme Kampı" FontWeight="Light"></Label>
-                <Label HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="15" Foreground="White" Content="Ergül Kızılkaya" FontWeight="Light"></Label>
+
+                <StackPanel  HorizontalAlignment="Left" Margin="10,0,0,0" Orientation="Horizontal">
+                    <Viewbox Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                        <Canvas Width="13.229166" Height="13.229167">
+                            <Canvas.RenderTransform>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Canvas.RenderTransform>
+                            <Canvas.Resources/>
+                            <!--Unknown tag: sodipodi:namedview-->
+                            <!--Unknown tag: metadata-->
+                           
+                        </Canvas>
+                    </Viewbox>
+                    <Label FontSize="15" Foreground="White" Content="Yazılım Geliştirici Yetiştirme Kampı" FontWeight="Light"></Label>
+
+                </StackPanel>
+
+
+
+                <StackPanel  HorizontalAlignment="Right" Margin="0,0,10,0"  Orientation="Horizontal">
+                    <Viewbox Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                        <Canvas Width="13.229166" Height="13.229167">
+                            <Canvas.RenderTransform>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Canvas.RenderTransform>
+                            <Canvas.Resources/>
+                            <!--Unknown tag: sodipodi:namedview-->
+                            <!--Unknown tag: metadata-->
+                            <Canvas >
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path196" Fill="White" StrokeThickness="0.559877">
+                                    <Path.Data>
+                                        <PathGeometry Figures="M 10.021094 8.6137231 C 9.4724137 8.3393833 8.6773887 7.678728 7.4904487 7.4603759 c 0.291136 -0.3527226 0.526285 -0.9014022 0.772631 -1.5396622 0.123172 -0.3863153 0.100777 -0.7054454 0.100777 -1.1533472 0 -0.3415253 0.06719 -0.8678098 -0.02239 -1.1757422 C 8.0839187 2.589444 7.4232641 2.3151042 6.6506335 2.3151042 c -0.7838282 0 -1.4444833 0.2743398 -1.7020268 1.2765201 -0.078383 0.3079324 -0.022394 0.8454146 -0.022394 1.1757422 0 0.4479018 -0.022394 0.7670319 0.1231722 1.1533472 0.2351493 0.63826 0.4591002 1.1981372 0.7614339 1.5396622 C 4.6350748 7.6899257 3.8288516 8.3505807 3.302567 8.6137231 2.1828125 9.1400075 2.1828125 9.7222805 2.1828125 9.7222805 v 0.22395 c 0 0.3807165 0.4143092 0.7670315 0.8174208 0.7670315 H 10.31223 c 0.515087 0 0.828618 -0.419908 0.828618 -0.8006235 v -0.190358 c 0 0 -0.01119 -0.582272 -1.119754 -1.1085574 z" FillRule="EvenOdd"/>
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Canvas>
+                    </Viewbox>
+                    <Label FontSize="15" Foreground="White" Content="Ergül Kızılkaya" FontWeight="Light"></Label>
+
+                </StackPanel>
             </Grid>
         </Border>
-        <StackPanel>
-            <Label Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="24" Content="Recap Project - Araba Kiralama Projesi"></Label>
-            <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsamaktadır.N-Katmanlı mimari yapısı ile hazırlanmıştır. Entity Framework kullanılarak CRUD işlemleri yapılmaktadır. Validation için FluentValidation 7.3.3 kullanılmıştır."></TextBlock>
-        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="170"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Foreground="White" FontWeight="Regular" Margin="10,10,0,0" FontSize="24" Content="Recap Project"></Label>
+                    <Label Foreground="White" FontWeight="Light" Margin="0,10,10,0" FontSize="24" Content="- Araba Kiralama Projesi"></Label>
+
+                </StackPanel>
+                <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsamaktadır.N-Katmanlı mimari yapısı ile hazırlanmıştır. Entity Framework kullanılarak CRUD işlemleri yapılmaktadır. Validation için FluentValidation 7.3.3 kullanılmıştır."></TextBlock>
+            </StackPanel>
+            <Image Margin="0,0,23,0" Grid.Column="1" Source="Resources/car_illustration.png"></Image>
+        </Grid>
+
         <TabControl Name="tabControl" Grid.Row="1"  Margin="15,10,15,15">
             <TabItem FontSize="15">
                 <TabItem.Header>
@@ -67,14 +119,79 @@
 
                         <StackPanel>
                             <Label Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="17" Content="Araç Bilgileri"></Label>
-                            <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Sisteme kayıtlı olan tüm araçlar listelenmektedir."></TextBlock>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Viewbox Margin="11,0,0,0"  Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Width="13.229166" Height="13.229167">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+                                        <!--Unknown tag: sodipodi:namedview-->
+                                        <!--Unknown tag: metadata-->
+                                        <Canvas>
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path286" Fill="White" StrokeThickness="0.515462">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M 7.043139 9.7167972 10.599828 6.1034075 7.043139 2.500327 v 2.0412301 c -2.061848 0 -4.680395 0.9845328 -4.680395 5.6597739 0.845357 -2.8298866 4.42782 -2.5412278 4.680395 -2.5412278 z" FillRule="EvenOdd"/>
+                                                </Path.Data>
+                                            </Path>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                                
+                                <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="0,0,10,0" FontSize="15" Text="Sisteme kayıtlı olan tüm araçlar listelenmektedir."></TextBlock>
+
+                            </StackPanel>
+                            
+                            
                         </StackPanel>
                         <StackPanel Grid.Column="1">
-                            <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Filtrele (Renk)"></Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Viewbox Margin="0,11,0,0" Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Width="13.229166" Height="13.229167">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+                                        <!--Unknown tag: sodipodi:namedview-->
+                                        <!--Unknown tag: metadata-->
+                                        <Canvas>
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path152" Fill="White" StrokeThickness="0.625903">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="m 6.5126702 1.4901113 c 0 2.7852716 -2.9480058 3.8117539 -2.9480058 6.6283207 0 2.816567 2.9480058 2.760235 2.9480058 2.760235 0 0 2.9480075 0.05633 2.9480075 -2.760235 0 -2.8165668 -2.9480075 -3.8430491 -2.9480075 -6.6283207 z" FillRule="NonZero"/>
+                                                </Path.Data>
+                                            </Path>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                                <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Filtrele (Renk)"></Label>
+
+                            </StackPanel>
                             <ComboBox SelectionChanged="CbxColors_SelectionChanged" Name="cbxColors" Margin="0,0,3,0"></ComboBox>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Filtrele (Marka)"></Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Viewbox Margin="0,11,0,0" Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Width="13.229166" Height="13.229167">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+                                        <!--Unknown tag: sodipodi:namedview-->
+                                        <!--Unknown tag: metadata-->
+                                        <Canvas >
+                                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path46" Fill="White" StrokeThickness="0.519324">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M 7.1676539 9.5839028 V 7.9791902 c 0.519325 -0.1609907 0.78418 -0.503745 0.945171 -0.9451708 h 1.604713 c -0.218116 1.3035048 -0.99191 2.3317674 -2.549884 2.5498834 z M 3.579121 7.0340194 h 1.6047132 c 0.160991 0.4414258 0.4258462 0.7841801 0.9451707 0.9451708 V 9.5839028 C 5.0903558 9.3657868 3.7972373 8.3375242 3.579121 7.0340194 Z M 6.6483299 3.3987472 c 1.542394 0 2.819932 1.1269343 3.069208 2.5966229 H 8.1128249 C 7.8947089 5.3929537 7.3234519 4.956721 6.6483299 4.956721 c -0.675122 0 -1.2463793 0.4362327 -1.4644957 1.0386491 H 3.579121 C 3.8283968 4.5256815 5.1059356 3.3987472 6.6483299 3.3987472 Z m 0 -1.0386493 c -2.2954152 0 -4.1545972 1.8591822 -4.1545972 4.1545969 0 2.2954148 1.859182 4.1545972 4.1545972 4.1545972 2.295414 0 4.1545961 -1.8591824 4.1545961 -4.1545972 0 -2.2954147 -1.8591821 -4.1545969 -4.1545961 -4.1545969 z" FillRule="EvenOdd"/>
+                                                </Path.Data>
+                                            </Path>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                                <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Filtrele (Marka)"></Label>
+
+                            </StackPanel>
+
                             <ComboBox SelectionChanged="CbxBrands_SelectionChanged" Margin="0,0,12,0" Name="cbxBrands"></ComboBox>
                         </StackPanel>
 
@@ -88,27 +205,248 @@
                         <ListView SelectionChanged="LvCars_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="12"  Grid.Row="0" AlternationCount="2" Name="lvCars">
                             <ListView.View>
                                 <GridView >
-                                    <GridViewColumn Width="40"   Header="Id"  DisplayMemberBinding="{Binding Id}" />
-                                    <GridViewColumn Width="170"  Header="Araç Adı" DisplayMemberBinding="{Binding Name}"/>
-                                    <GridViewColumn Width="80" Header="Marka" DisplayMemberBinding="{Binding BrandName}" />
-                                    <GridViewColumn Width="80" Header="Renk"  DisplayMemberBinding="{Binding ColorName}" />
-                                    <GridViewColumn Width="100" Header="Günlük Fiyat" DisplayMemberBinding="{Binding DailyPrice}" />
-                                    <GridViewColumn Width="85" Header="Model Yılı"  DisplayMemberBinding="{Binding ModelYear}" />
-                                    <GridViewColumn Width="176" Header="Açıklama"  DisplayMemberBinding="{Binding Description}" />
+                                    <GridViewColumn Width="40"     DisplayMemberBinding="{Binding Id}">
+                                        <GridViewColumn.Header>
+                                            <Label Content="No" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="140"  DisplayMemberBinding="{Binding Name}">
+                                        <GridViewColumn.Header>
+                                            <Label Content="Araç Adı" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="80" DisplayMemberBinding="{Binding BrandName}">
+                                        <GridViewColumn.Header>
+                                            <Label Content="Marka" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="80"  DisplayMemberBinding="{Binding ColorName}">
+                                        <GridViewColumn.Header>
+                                            <Label Content="Renk" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="60" DisplayMemberBinding="{Binding DailyPrice}" >
+                                        <GridViewColumn.Header>
+                                            <Label Content="Fiyat" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                   
+                                    <GridViewColumn Width="166"   DisplayMemberBinding="{Binding Description}" >
+                                        <GridViewColumn.Header>
+                                            <Label Content="Açıklama" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="176"   >
+                                        <GridViewColumn.Header>
+                                            <Label Content="İşlem" FontWeight="Bold"></Label>
+                                        </GridViewColumn.Header>
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+
+                                                    <Button Click="Button_Click" Tag="{Binding Id}">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Viewbox Margin="-2,0,0,0"  Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                                <Canvas Width="13.229166" Height="13.229167">
+                                                                    <Canvas.RenderTransform>
+                                                                        <TranslateTransform X="0" Y="0"/>
+                                                                    </Canvas.RenderTransform>
+                                                                    <Canvas.Resources/>
+                                                                    <!--Unknown tag: sodipodi:namedview-->
+                                                                    <!--Unknown tag: metadata-->
+                                                                    <Canvas>
+                                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path286" Fill="White" StrokeThickness="0.515462">
+                                                                            <Path.Data>
+                                                                                <PathGeometry Figures="M 7.043139 9.7167972 10.599828 6.1034075 7.043139 2.500327 v 2.0412301 c -2.061848 0 -4.680395 0.9845328 -4.680395 5.6597739 0.845357 -2.8298866 4.42782 -2.5412278 4.680395 -2.5412278 z" FillRule="EvenOdd"/>
+                                                                            </Path.Data>
+                                                                        </Path>
+                                                                    </Canvas>
+                                                                </Canvas>
+                                                            </Viewbox>
+                                                            <Label Padding="3,0" Content="Kirala"></Label>
+                                                        </StackPanel>
+
+                                                    </Button>
+
+                                                    <Button Name="btnShowRental" Click="BtnShowRental_Click" Tag="{Binding Id}" Margin="5,0,0,0">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Viewbox Margin="-2,0,0,0"  Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                                <Canvas Width="13.229166" Height="13.229167">
+                                                                    <Canvas.RenderTransform>
+                                                                        <TranslateTransform X="0" Y="0"/>
+                                                                    </Canvas.RenderTransform>
+                                                                    <Canvas.Resources/>
+                                                                    <!--Unknown tag: sodipodi:namedview-->
+                                                                    <!--Unknown tag: metadata-->
+                                                                    <Canvas>
+                                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="patssh286" Fill="White" StrokeThickness="0.515462">
+                                                                            <Path.Data>
+                                                                                <PathGeometry Figures="M 7.043139 9.7167972 10.599828 6.1034075 7.043139 2.500327 v 2.0412301 c -2.061848 0 -4.680395 0.9845328 -4.680395 5.6597739 0.845357 -2.8298866 4.42782 -2.5412278 4.680395 -2.5412278 z" FillRule="EvenOdd"/>
+                                                                            </Path.Data>
+                                                                        </Path>
+                                                                    </Canvas>
+                                                                </Canvas>
+                                                            </Viewbox>
+                                                            <Label Padding="3,0" Content="Teslim Al"></Label>
+                                                        </StackPanel>
+
+                                                    </Button>
+
+                                                </StackPanel>
+                                               
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    
+                                    
                                 </GridView>
                             </ListView.View>
                         </ListView>
 
                         <Grid Grid.Row="1" Margin="7,0,0,0">
+
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Toplam Araç Sayısı : "></Label>
-                                <Label Name="lblCarsCount" Content="#"></Label>
+                                <Button Click="BtnExit_Click" Name="btnExit" BorderBrush="#C4392A" Margin="5,0,0,0" Grid.Row="1" Height="30" Width="65"  Background="#C4392A">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Width="17" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas >
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path52" Fill="White" StrokeThickness="0.61776">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M 7.3663172 6.4158114 V 2.0914853 h -1.235523 v 4.3243261 z m -4.9420881 0.617761 c 0 2.3907347 1.9335911 4.3243256 4.3243261 4.3243256 2.390735 0 4.3243268 -1.9335909 4.3243268 -4.3243256 0 -1.7235528 -1.013128 -3.2123565 -2.4710448 -3.9104263 v 1.4393827 c 0.747491 0.5621625 1.235523 1.4579157 1.235523 2.4710436 0 1.7050197 -1.383785 3.0888046 -3.088805 3.0888046 -1.70502 0 -3.0888045 -1.3837849 -3.0888045 -3.0888046 0 -1.0131279 0.4880315 -1.9088811 1.2355215 -2.4710436 V 3.1231461 C 3.4373568 3.8212159 2.4242291 5.3100196 2.4242291 7.0335724 Z" FillRule="EvenOdd"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Kapat"></Label>
+                                    </StackPanel>
+
+                                </Button>
+                                <Button Click="BtnOptions_Click" Margin="5,0,0,0" Grid.Row="1" Height="30" Width="80" Name="btnOptions">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas >
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path116" Fill="White" StrokeThickness="0.604409">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="m 7.4673875 6.9755535 c 0.1148356 0.1148356 0.3142941 0.1148356 0.4291331 0 L 8.2954286 6.5766432 10.88835 3.983723 c 0.114835 -0.1148356 0.114835 -0.3082475 0 -0.4230854 L 10.030087 2.702376 c -0.1088092 -0.1148356 -0.3082492 -0.1148356 -0.4230885 0 L 7.0140816 5.2952928 6.6151702 5.6942042 c -0.060443 0.060443 -0.090671 0.1329731 -0.090671 0.2175871 0 0.078582 0.030227 0.1511116 0.090671 0.2115337 L 6.8267051 6.3348588 5.7750315 7.3865324 4.0766397 9.0849261 3.200245 9.1816242 2.5958353 10.994855 4.4090657 10.390445 4.5057638 9.5140502 6.2041556 7.8156587 7.2558281 6.7639852 Z M 5.297556 6.9090825 5.345911 6.9574375 6.010763 6.2986332 C 5.95032 6.1777432 5.920092 6.0447802 5.920092 5.9118093 c 0 -0.2417632 0.096698 -0.47144 0.2659395 -0.6467189 L 7.0745126 4.3766091 C 7.0503465 3.7601106 6.8085732 3.1496543 6.3371343 2.6721733 5.7508564 2.0919397 4.9530344 1.8501743 4.1854332 1.9529257 L 5.6299731 3.3914209 5.1645771 5.1079431 3.4480526 5.573341 2.0035135 4.1287993 C 1.9007643 4.890355 2.1425271 5.694221 2.728805 6.2804989 3.4238775 6.9755703 4.4211521 7.1871141 5.2975471 6.909086 Z m 4.780883 3.1127105 c -0.1994502 0.19945 -0.5258362 0.19945 -0.7252924 0 -0.1994496 -0.1994491 -0.1994496 -0.5197936 0 -0.7192476 0.1994495 -0.1994496 0.5258382 -0.1994496 0.7252924 0 0.199449 0.1994495 0.199449 0.5197935 0 0.7192476 z M 10.574057 8.8552816 8.7245617 7.0057875 8.3196071 7.4046977 C 8.0536654 7.6706394 7.6245346 7.7431681 7.2921086 7.5799789 L 6.6333021 8.2448309 8.905885 10.517411 c 0.036277 0.04837 0.078582 0.0967 0.1208889 0.139005 0.4653957 0.465398 1.2209081 0.465398 1.6802591 0 0.465396 -0.465395 0.465396 -1.2209075 0 -1.6863032 -0.04231 -0.042305 -0.08461 -0.078582 -0.132974 -0.1148356 z" FillRule="EvenOdd"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Ayarlar"></Label>
+                                    </StackPanel>
+
+                                </Button>
+                                <Label VerticalAlignment="Center" Content="Toplam Araç Sayısı : "></Label>
+                                <Label VerticalAlignment="Center" Name="lblCarsCount" Content="#"></Label>
                             </StackPanel>
                             <StackPanel Height="30" Margin="0,-5,12,0" HorizontalAlignment="Right" Orientation="Horizontal">
-                                <Button Click="BtnFilterClear_Click" Name="btnFilterClear" Content=" Filtreyi Temizle "></Button>
-                                <Button Click="BtnMiniAdd_Click" Name="btnMiniAdd" Margin="2,0,0,0"  Content=" Yeni "></Button>
-                                <Button IsEnabled="False" Click="BtnMiniUpdate_Click" Name="btnMiniUpdate"  Margin="2,0,0,0"  Content=" Düzenle "></Button>
-                                <Button IsEnabled="False" Click="BtnMiniDelete_Click" Name="btnMiniDelete"  Margin="2,0,0,0" Width="40" Content="Sil"></Button>
+                                <Button Click="BtnFilterClear_Click" Name="btnFilterClear">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas >
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path288" Fill="White" StrokeThickness="0.522276">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="m 3.2785142 5.9334836 3.6768262 -3.60893 3.6663806 3.60893 H 8.5430614 c 0 2.0943284 -0.997548 4.7474934 -5.755487 4.7474934 C 5.6653179 9.824443 5.372843 6.189399 5.372843 5.9334836 Z" FillRule="EvenOdd"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Filtreyi Temizle"></Label>
+                                    </StackPanel>
+                                </Button>
+                                <Button Width="70" Click="BtnMiniAdd_Click" Name="btnMiniAdd" Margin="2,0,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Margin="-5,0,0,0" Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas >
+                                                    <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="321.055,82.36 327.055,82.36 327.055,78.36 321.055,78.36 321.055,72.36 317.055,72.36 317.055,78.36 311.055,78.36 311.055,82.36 317.055,82.36 317.055,88.36 321.055,88.36 " Name="polygon260" FillRule="NonZero" Fill="#FF07A000">
+                                                        <Polygon.RenderTransform>
+                                                            <MatrixTransform Matrix="0.54511253 0 0 0.54511253 -167.18819 -37.308778"/>
+                                                        </Polygon.RenderTransform>
+                                                    </Polygon>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Yeni"></Label>
+                                    </StackPanel>
+
+
+                                </Button>
+                                <Button Width="90" IsEnabled="False" Click="BtnMiniUpdate_Click" Name="btnMiniUpdate"  Margin="2,0,0,0" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Margin="-3,0,0,0" Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas >
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path84" Fill="#FF007ACC" StrokeThickness="0.585876">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M 10.185684 4.6457637 8.3343142 2.8705576 9.1193887 2.1206354 10.970759 3.9134178 Z M 5.0944164 9.7018786 3.3719392 7.9794014 7.7660137 3.4740104 9.6701128 5.1437587 Z m -2.32593 0.6034534 V 8.5652781 l 1.7400535 1.7400539 z" FillRule="EvenOdd"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Düzenle"></Label>
+                                    </StackPanel>
+                                </Button>
+                                <Button IsEnabled="False" Click="BtnMiniDelete_Click" Name="btnMiniDelete"  Margin="2,0,0,0" Width="55" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Viewbox Margin="-3,0,0,0" Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Canvas Width="13.229166" Height="13.229167">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="0" Y="0"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas.Resources/>
+                                                <!--Unknown tag: sodipodi:namedview-->
+                                                <!--Unknown tag: metadata-->
+                                                <Canvas Name="layerl1">
+                                                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path206" Fill="#FFD8210D" StrokeThickness="0.571688">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M 8.0319945 2.6127604 V 2.0410715 H 5.1735492 V 2.6127604 H 2.3151042 V 3.7561385 H 10.890439 V 2.6127604 Z m -5.1452014 1.715067 v 5.1452005 c 0 0.9490041 0.7660633 1.7150671 1.715067 1.7150671 h 4.0018234 c 0.949003 0 1.7150665 -0.766063 1.7150665 -1.7150671 V 4.3278274 H 9.1753725 v 5.1452005 c 0 0.31443 -0.25726 0.5716901 -0.571689 0.5716901 H 4.6018601 c -0.3144289 0 -0.5716889 -0.2572601 -0.5716889 -0.5716901 V 4.3278274 Z m 1.715067 0.5716891 V 9.4730279 H 5.1735492 V 4.8995165 Z m 1.143378 0 v 4.5735114 h 0.571689 V 4.8995165 Z m 1.1433781 0 V 9.4730279 H 7.4603055 V 4.8995165 Z m 1.1433783 0 v 4.5735114 h 0.571689 V 4.8995165 Z" FillRule="EvenOdd"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Viewbox>
+                                        <Label Padding="0" Content="Sil"></Label>
+                                    </StackPanel>
+                                </Button>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -148,11 +486,22 @@
                         <RowDefinition Height="75"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <StackPanel>
-                        <Label Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="17" Content="Yeni Araç Ekle"></Label>
-                        <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Araç adı minimum 2 karekter uzunluğunda, günlük fiyat ise 0'dan büyük olmalıdır."></TextBlock>
-                    </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Resources/add_illustration.png"></Image>
+                        <StackPanel Margin="-12,0,0,0" Grid.Column="1">
+                            <Label Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="17" Content="Yeni Araç Ekle"></Label>
+                            <StackPanel Margin="16,0,10,0" Orientation="Horizontal">
 
+
+                                <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" FontSize="15" Text="Araç adı minimum 2 karekter uzunluğunda, günlük fiyat ise 0'dan büyük olmalıdır."></TextBlock>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
 
                     <StackPanel Margin="10,0,0,0" Grid.Row="1" Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
@@ -256,7 +605,28 @@
 
                     <StackPanel>
                         <Label Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="17" Content="Araç Güncelle"></Label>
-                        <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Araç adı minimum 2 karekter uzunluğunda, günlük fiyat ise 0'dan büyük olmalıdır."></TextBlock>
+                        <StackPanel Margin="16,0,10,0" Orientation="Horizontal">
+                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                <Canvas Name="svgs1155" Width="13.229166" Height="13.229167">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources/>
+                                    <!--Unknown tag: sodipodi:namedview-->
+                                    <!--Unknown tag: metadata-->
+                                    <Canvas Name="laayesr1">
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path25s8" Fill="#FFFFCC00" StrokeThickness="0.660975">
+                                            <Path.Data>
+                                                <PathGeometry Figures="M 7.1510461 7.6772007 H 5.8290952 V 4.3723237 H 7.1510461 Z M 7.4022167 9.9179079 H 6.0802654 V 8.5959567 H 7.4022167 Z M 11.777874 10.188908 7.2105336 2.3431293 C 6.9197047 1.8341781 6.4371927 1.867227 6.1463637 2.3761779 L 1.5790232 10.175689 c -0.297439 0.50895 -0.052878 0.806389 0.5287804 0.806389 h 9.1412894 c 0.581659 0 0.81961 -0.284219 0.528781 -0.79317 z" FillRule="EvenOdd"/>
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+
+                            <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" FontSize="15" Text="Araç adı minimum 2 karekter uzunluğunda, günlük fiyat ise 0'dan büyük olmalıdır."></TextBlock>
+
+                        </StackPanel>
                     </StackPanel>
 
                     <Grid Grid.Row="1">
@@ -301,7 +671,7 @@
                             </ListView>
                         </StackPanel>
 
-                        <StackPanel Grid.Column="1" Margin="10,0,0,0" Grid.Row="1" Orientation="Vertical">
+                        <StackPanel Name="spUpdateField" Grid.Column="1" Margin="10,0,0,0" Grid.Row="1" Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
                                 <StackPanel>
                                     <Label Content="Araç Adı :"></Label>
@@ -332,12 +702,12 @@
 
                             </StackPanel>
 
-                            <Grid Width="500" Margin="0,15,0,0" HorizontalAlignment="Left">
+                            <Grid Width="500" Margin="0,25,0,0" HorizontalAlignment="Left">
                                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
 
                                     <Button Height="30" Width="90" Click="BtnUpdate_Click" Name="btnUpdate" HorizontalAlignment="Right">
                                         <StackPanel Orientation="Horizontal">
-                                            <Viewbox Width="22" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                            <Viewbox Margin="0,0,5,0" Width="15" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                                 <Canvas Name="svg1skk155" Width="50" Height="50">
                                                     <Canvas.RenderTransform>
                                                         <TranslateTransform X="0" Y="0"/>
@@ -358,6 +728,30 @@
                                         </StackPanel>
 
                                     </Button>
+
+                                    <Button Margin="5,0,0,0" Height="30" Width="65" Click="BtnUpdate_Click" Name="btnUpdateCancel" HorizontalAlignment="Right" Background="#FFB20D0D">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Viewbox Width="13"  Margin="0,0,5,0" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas Name="svg1155" Width="13.229166" Height="13.229167">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <!--Unknown tag: sodipodi:namedview-->
+                                                    <!--Unknown tag: metadata-->
+                                                    <Canvas Name="layer1">
+                                                        <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="271.525,74.95 276.935,80.36 271.515,85.77 273.645,87.9 279.055,82.48 284.475,87.89 286.595,85.77 281.175,80.36 286.595,74.95 284.465,72.82 279.055,78.24 273.645,72.82 " Name="polygon262" FillRule="NonZero" Fill="#FFFFFF">
+                                                            <Polygon.RenderTransform>
+                                                                <MatrixTransform Matrix="0.67815144 0 0 0.67815144 -182.57972 -48.117902"/>
+                                                            </Polygon.RenderTransform>
+                                                        </Polygon>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Viewbox>
+                                            <Label Padding="0" Content="İptal"></Label>
+                                        </StackPanel>
+
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -374,5 +768,6 @@
 
 
         </TabControl>
+
     </Grid>
 </Window>

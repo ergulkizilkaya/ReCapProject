@@ -1,0 +1,199 @@
+﻿<Window x:Class="ReCapProject.WpfUI.WindowRental"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReCapProject.WpfUI" Loaded="Window_Loaded"
+        mc:Ignorable="d" Width="763"  MinWidth="763" MinHeight="363"  Style="{DynamicResource CustomWindowStyle}" WindowStartupLocation="CenterScreen"
+        Title="Kirala" Height="598" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="113"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+     
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="170"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Foreground="White" FontWeight="Regular" Margin="10,10,0,0" FontSize="24" Content="Recap Project"></Label>
+                    <Label Foreground="White" FontWeight="Light" Margin="0,10,10,0" FontSize="24" Content="- Araç Kiraya Veriliyor....."></Label>
+
+                </StackPanel>
+                <TextBlock TextWrapping="Wrap" Foreground="#FFC1C1C1" FontWeight="Light" Margin="16,0,10,0" FontSize="15" Text="Aracınızı kiraya vermek istediğiniz müşteriyi seçiniz.Araç kiralama tarihi sistem tarafından otomatik olarak tanımlanmaktadır."></TextBlock>
+            </StackPanel>
+            <Image Margin="0,0,23,0" Grid.Column="1" Source="Resources/car_illustration.png"></Image>
+        </Grid>
+
+        <Grid Margin="10,0,0,0" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Background="#FF3F3D56">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Resources/add_illustration.png"></Image>
+                        <StackPanel Margin="-12,0,0,0" Grid.Column="1">
+                            <Label Name="lblCarName" Foreground="White" FontWeight="Light" Margin="10,10,10,0" FontSize="17" Content="Araç Adı"></Label>
+                            <StackPanel Margin="16,0,10,0" Orientation="Horizontal">
+
+                                <TextBlock Text="Marka : " FontWeight="Regular"></TextBlock>
+                                <TextBlock Name="lblBrand" Text="[Marka]" FontWeight="Light"></TextBlock>
+                                <TextBlock Margin="10,0,0,0" Text="Renk : " FontWeight="Regular"></TextBlock>
+                                <TextBlock Name="lblColor" Text="[Renk]" FontWeight="Light"></TextBlock>
+                                <TextBlock Margin="10,0,0,0" Text="Günlük Fiyat : " FontWeight="Regular"></TextBlock>
+                                <TextBlock Name="lblDailyPrice" Text="[Günlük Fiyat] " FontWeight="Light"></TextBlock>
+                                <TextBlock Margin="10,0,0,0" Text="Model Yılı : " FontWeight="Regular"></TextBlock>
+                                <TextBlock Name="lblModelYear" Text="[Model Yılı] " FontWeight="Light"></TextBlock>
+                                <TextBlock Margin="10,0,0,0" Text="Açıklama : " FontWeight="Regular"></TextBlock>
+                                <TextBlock Name="lblDescription" Text="[Açıklama] " FontWeight="Light"></TextBlock>
+
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+
+
+              
+
+                    <Grid Margin="0,12,0,0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Müşteri Ara :"></Label>
+                                <Grid>
+
+
+                                    <TextBox TextChanged="TbxSearch_TextChanged" Name="tbxSearch"  Padding="22,0,0,0" Width="153" Margin="0,0,0,0"></TextBox>
+                                    <Viewbox Width="22" Margin="0,0,0,0" Height="22" HorizontalAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                        <Canvas Name="svg11ss55" Width="50" Height="50">
+                                            <Canvas.RenderTransform>
+                                                <TranslateTransform X="0" Y="0"/>
+                                            </Canvas.RenderTransform>
+                                            <Canvas.Resources/>
+                                            <!--Unknown tag: sodipodi:namedview-->
+                                            <!--Unknown tag: metadata-->
+                                            <Canvas Name="laysser1">
+                                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path4379" Fill="#FF686868" StrokeThickness="2.01074">
+                                                    <Path.Data>
+                                                        <PathGeometry Figures="m 22.279818 9.3084204 c -6.454482 0 -11.702525 5.2480356 -11.702525 11.7025256 0 6.454482 5.248043 11.682416 11.702525 11.682416 2.794934 0 5.34858 -0.965157 7.359319 -2.593863 0.08041 0.160885 0.160886 0.321694 0.301632 0.462439 l 7.298993 7.278894 c 0.382036 0.402174 0.924948 0.603185 1.447735 0.603185 0.522781 0 1.045592 -0.201087 1.447735 -0.603185 0.804302 -0.804295 0.804302 -2.111277 0 -2.915579 l -7.2789 -7.278855 c -0.201087 -0.201087 -0.422237 -0.341833 -0.683665 -0.442376 1.146127 -1.809669 1.789559 -3.920946 1.789559 -6.193084 0 -6.454489 -5.227927 -11.7025246 -11.682416 -11.7025246 z m 0 3.5992296 c 4.46385 0 8.083187 3.639445 8.083187 8.103296 0 1.508053 -0.422236 2.975896 -1.226554 4.282879 l -0.744007 1.166236 -1.025482 0.824404 c -1.467845 1.186337 -3.217187 1.809667 -5.087182 1.809667 -4.46385 0 -8.103296 -3.619337 -8.103296 -8.083186 0 -4.463851 3.639446 -8.103296 8.103296 -8.103296 z" FillRule="EvenOdd"/>
+                                                    </Path.Data>
+                                                </Path>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Grid>
+
+                            </StackPanel>
+                            <ListView SelectionChanged="LvCustomers_SelectionChanged"  Height="295" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,3,0,0" AlternationCount="2" Name="lvCustomers">
+                                <ListView.View>
+                                    <GridView >
+                                        <GridViewColumn Width="40"   Header="Id"  DisplayMemberBinding="{Binding Id}" />
+                                        <GridViewColumn Width="190" Header="Name" DisplayMemberBinding="{Binding CompanyName}" />
+
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+
+                        <StackPanel Name="spUpdateField" Grid.Column="1" Margin="10,0,0,0" Grid.Row="1" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Müşteri :"></Label>
+                                    <TextBox IsReadOnly="True" Name="tbxCustomerName" FontSize="18" Width="160"></TextBox>
+                                </StackPanel>
+                                <StackPanel Margin="10,0,0,0">
+                                    <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Araç :"></Label>
+                                    <TextBox IsReadOnly="True" Name="tbxCarName" FontSize="18" Width="160"></TextBox>
+                                </StackPanel>
+                                <StackPanel Margin="10,0,0,0">
+                                    <Label Foreground="White" FontWeight="Light" Margin="-5,10,10,0" FontSize="17" Content="Kiralama Tarihi :"></Label>
+                                    <TextBox IsReadOnly="True" Name="tbxRentDate" FontSize="18" Width="160"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                          
+
+                            <Grid Width="500" Margin="0,25,0,0" HorizontalAlignment="Left">
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
+
+                                    <Button Height="30" Width="90" Click="BtnAddRental_Click" Name="btnAddRental" HorizontalAlignment="Right">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Viewbox Margin="0,0,5,0" Width="15" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas Name="svg1skk155" Width="50" Height="50">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <!--Unknown tag: sodipodi:namedview-->
+                                                    <!--Unknown tag: metadata-->
+                                                    <Canvas Name="layesrj1">
+                                                        <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="233.145,80.32 231.015,82.45 235.965,87.4 236.055,87.31 236.145,87.4 247.095,76.45 244.965,74.32 236.055,83.24 " Name="polygon4dfg393" FillRule="NonZero" Fill="White">
+                                                            <Polygon.RenderTransform>
+                                                                <MatrixTransform Matrix="2.5059946 0 0 2.5059946 -573.59837 -178.0713"/>
+                                                            </Polygon.RenderTransform>
+                                                        </Polygon>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Viewbox>
+                                            <Label Padding="0" Content="Kiraya Ver"></Label>
+                                        </StackPanel>
+
+                                    </Button>
+
+                                    <Button Margin="5,0,0,0" Height="30" Width="65" Click="BtnCancel_Click" Name="btnCancel" HorizontalAlignment="Right" Background="#FFB20D0D">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Viewbox Width="13"  Margin="0,0,5,0" Height="20" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                                <Canvas Name="svg1155" Width="13.229166" Height="13.229167">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <!--Unknown tag: sodipodi:namedview-->
+                                                    <!--Unknown tag: metadata-->
+                                                    <Canvas Name="layer1">
+                                                        <Polygon xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="271.525,74.95 276.935,80.36 271.515,85.77 273.645,87.9 279.055,82.48 284.475,87.89 286.595,85.77 281.175,80.36 286.595,74.95 284.465,72.82 279.055,78.24 273.645,72.82 " Name="polygon262" FillRule="NonZero" Fill="#FFFFFF">
+                                                            <Polygon.RenderTransform>
+                                                                <MatrixTransform Matrix="0.67815144 0 0 0.67815144 -182.57972 -48.117902"/>
+                                                            </Polygon.RenderTransform>
+                                                        </Polygon>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Viewbox>
+                                            <Label Padding="0" Content="İptal"></Label>
+                                        </StackPanel>
+
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

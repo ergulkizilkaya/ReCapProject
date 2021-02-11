@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReCapProject.WpfUI"
-        Style="{DynamicResource CustomWindowStyle}" MinHeight="218" MinWidth="465" MaxHeight="218" MaxWidth="465"  KeyDown="Window_KeyDown"
+        Style="{DynamicResource CustomWindowStyle}" MinHeight="248" MinWidth="465" MaxHeight="218" MaxWidth="465"  KeyDown="Window_KeyDown"
         mc:Ignorable="d" Background="#C4392A" WindowStartupLocation="CenterScreen" Height="218" Width="465"
         Title="Hata" >
     <Grid>
