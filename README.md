@@ -126,9 +126,11 @@ FluentValidation 7.3.3
 ```
 ## :computer:ScreenShots
 Projenin çalışma anına ait ekran görüntüleri  <br> <br>
-![image](https://user-images.githubusercontent.com/77868230/107132340-11339e00-68ef-11eb-92e0-7be47ca85e2a.png)
-![image](https://user-images.githubusercontent.com/77868230/107132348-21e41400-68ef-11eb-9950-9af486248bd9.png) 
-![image](https://user-images.githubusercontent.com/77868230/107121391-37335100-68a3-11eb-9232-c4d5d5a2d29c.png)  
-![image](https://user-images.githubusercontent.com/77868230/107121405-4914f400-68a3-11eb-9c90-3e75f68bab64.png)  
+![image](https://user-images.githubusercontent.com/77868230/107650244-52310700-6c8f-11eb-8e11-5e974c97917c.png)
+![image](https://user-images.githubusercontent.com/77868230/107650330-6c6ae500-6c8f-11eb-961d-96edc3c7184b.png)
+![image](https://user-images.githubusercontent.com/77868230/107650393-80164b80-6c8f-11eb-98f2-d05a9d57617e.png)
+![image](https://user-images.githubusercontent.com/77868230/107650452-8f959480-6c8f-11eb-945f-835c901b1e44.png)
+![image](https://user-images.githubusercontent.com/77868230/107650516-9de3b080-6c8f-11eb-82b5-99ed1b097dab.png)
+![image](https://user-images.githubusercontent.com/77868230/107650566-ad62f980-6c8f-11eb-9776-9b10432a06b7.png) 
 ## :pencil2:Authors
 * **Ergül Kızılkaya** - [ergulkizilkaya](https://github.com/ergulkizilkaya)
