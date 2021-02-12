@@ -34,10 +34,11 @@ namespace ReCapProject.WpfUI
             _rentalService = new RentalManager(new EfRentalDal());
 
         }
-        IRentalService _rentalService;
-        ICarService _carService;
-        IColorService _colorService;
-        IBrandService _brandService;
+
+        readonly IRentalService _rentalService;
+        readonly ICarService _carService;
+        readonly IColorService _colorService;
+        readonly IBrandService _brandService;
         Car _selectedCar;
         List<Car> cars;
         List<CarDetailDto> carsDto;
@@ -51,17 +52,13 @@ namespace ReCapProject.WpfUI
         void LoadColors()
         {
             List<Entities.Concrete.Color> colors = _colorService.GetAll().Data;
-
             cbxColors.ItemsSource = colors;
             cbxColors.DisplayMemberPath = "Name";
             cbxColors.SelectedValuePath = "Id";
-
             cbxUpdateColor.ItemsSource = colors;
             cbxUpdateColor.DisplayMemberPath = "Name";
             cbxUpdateColor.SelectedValuePath = "Id";
             cbxUpdateColor.SelectedIndex = 0;
-
-
             cbxColors_Add.ItemsSource = colors;
             cbxColors_Add.DisplayMemberPath = "Name";
             cbxColors_Add.SelectedValuePath = "Id";
@@ -70,21 +67,17 @@ namespace ReCapProject.WpfUI
         void LoadBrands()
         {
             List<Brand> brands = _brandService.GetAll().Data;
-
             cbxBrands.ItemsSource = brands;
             cbxBrands.DisplayMemberPath = "Name";
             cbxBrands.SelectedValuePath = "Id";
-
             cbxUpdateBrand.ItemsSource = brands;
             cbxUpdateBrand.DisplayMemberPath = "Name";
             cbxUpdateBrand.SelectedValuePath = "Id";
             cbxUpdateBrand.SelectedIndex = 0;
-
             cbxBrands_Add.ItemsSource = brands;
             cbxBrands_Add.DisplayMemberPath = "Name";
             cbxBrands_Add.SelectedValuePath = "Id";
             cbxBrands_Add.SelectedIndex = 0;
-
         }
         void GetCarsByColorId(int colorId) => lvCars.ItemsSource = _carService.GetCarsByColorId(colorId).Data;
         void GetCarsByBrandId(int brandId) => lvCars.ItemsSource = _carService.GetCarsByBrandId(brandId).Data;
@@ -97,7 +90,6 @@ namespace ReCapProject.WpfUI
             tbxUpdateModelYear.Text = _selectedCar.ModelYear.ToString();
             cbxUpdateBrand.SelectedValue = _selectedCar.BrandId;
             cbxUpdateColor.SelectedValue = _selectedCar.ColorId;
-
             spUpdateField.IsEnabled = true;
             spUpdateField.Opacity = 1;
         }
@@ -107,7 +99,6 @@ namespace ReCapProject.WpfUI
             tbxUpdateDescription.Text = null;
             tbxUpdatedName.Text = null;
             tbxUpdateModelYear.Text = null;
-
             spUpdateField.IsEnabled = false;
             spUpdateField.Opacity = 0.3;
         }
@@ -247,12 +238,8 @@ namespace ReCapProject.WpfUI
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            decimal dailyprice=0;
-            decimal.TryParse(tbxDailyPrice.Text, out dailyprice);
-
-            int modelYear = 0;
-            int.TryParse(tbxModelYear.Text, out modelYear);
-
+            decimal.TryParse(tbxDailyPrice.Text, out decimal dailyprice);
+            int.TryParse(tbxModelYear.Text, out int modelYear);
             Car car = new Car
             {
                 BrandId = (int)cbxBrands_Add.SelectedValue,
@@ -276,10 +263,6 @@ namespace ReCapProject.WpfUI
                 WindowErrorMessage error = new WindowErrorMessage("Sistem Uyarısı", result.Message);
                 error.ShowDialog();
             }
-
-
-
-
         }
 
         private void TbxSearch_TextChanged(object sender, TextChangedEventArgs e)

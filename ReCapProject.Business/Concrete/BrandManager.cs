@@ -16,7 +16,7 @@ namespace ReCapProject.Business.Concrete
 {
     public class BrandManager : IBrandService
     {
-        IBrandDal _brandDal;
+        readonly IBrandDal _brandDal;
 
         public BrandManager(IBrandDal brandDal)
         {

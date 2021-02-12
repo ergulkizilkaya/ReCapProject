@@ -36,8 +36,8 @@ namespace ReCapProject.Business.Concrete
 
         public IResult CheckReturnDate(int carId)
         {
-            var result = _rentalDal.GetRentalDetails(x => x.CarId == carId);
-            if (result.Count > 0 && result.Count(x => x.ReturnDate == null) > 0)
+            var result = _rentalDal.GetRentalDetails(x => x.CarId == carId && x.ReturnDate == null);
+            if (result.Count > 0)
             {
                 return new ErrorResult(Messages.RentalAddedError);
             }

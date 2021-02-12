@@ -15,7 +15,7 @@ namespace ReCapProject.Business.Concrete
 {
     public class ColorManager : IColorService
     {
-        IColorDal _colorDal;
+        readonly IColorDal _colorDal;
 
         public ColorManager(IColorDal colorDal)
         {
@@ -24,9 +24,6 @@ namespace ReCapProject.Business.Concrete
 
         public IResult Add(Color color)
         {
-
-
-
             var validationResult = ValidationTool.Validate(new ColorValidator(), color);
             if (validationResult.Errors.Count > 0)
             {
