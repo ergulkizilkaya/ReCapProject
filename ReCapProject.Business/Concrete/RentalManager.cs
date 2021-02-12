@@ -23,8 +23,15 @@ namespace ReCapProject.Business.Concrete
 
         public IResult Add(Rental rental)
         {
+
+            var result = CheckReturnDate(rental.CarId);
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
             _rentalDal.Add(rental);
-            return new SuccessResult(Messages.RentalAdded);
+            return new SuccessResult(result.Message);
+
         }
 
         public IResult CheckReturnDate(int carId)
@@ -32,9 +39,9 @@ namespace ReCapProject.Business.Concrete
             var result = _rentalDal.GetRentalDetails(x => x.CarId == carId);
             if (result.Count > 0 && result.Count(x => x.ReturnDate == null) > 0)
             {
-                return new ErrorResult();
+                return new ErrorResult(Messages.RentalAddedError);
             }
-            return new SuccessResult();
+            return new SuccessResult(Messages.RentalAdded);
 
         }
 
@@ -45,7 +52,7 @@ namespace ReCapProject.Business.Concrete
 
         public IDataResult<List<RentalDetailDto>> GetRentalDetailsDto(int carId)
         {
-            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(x=>x.CarId== carId));
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(x => x.CarId == carId));
         }
 
         public IResult UpdateReturnDate(int Id)

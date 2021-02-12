@@ -316,7 +316,7 @@ namespace ReCapProject.WpfUI
             }
             else
             {
-                WindowErrorMessage error = new WindowErrorMessage("Sistem Mesajı","Seçilen Araç Henüz Teslim Edilmediği İçin Kiraya Verme İşlemi Yapılamaz.");
+                WindowErrorMessage error = new WindowErrorMessage("Sistem Mesajı",result.Message);
                 error.ShowDialog();
             }
 

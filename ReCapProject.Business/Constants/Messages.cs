@@ -18,6 +18,7 @@ namespace ReCapProject.Business.Constants
         public static string BrandDeleted = "Marka silme işlemi başarılı";
         public static string ColorAddError = "Eklemek istediğiniz renk zaten mevcut.Farklı bir renk giriniz."; 
         public static string BrandAddError = "Eklemek istediğiniz marka zaten mevcut.Farklı bir renk giriniz.";
+        public static string RentalAddedError = "Aracın kiraya verilebilmesi için önce teslim edilmesi gerekir.";
 
     }
 }

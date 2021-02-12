@@ -94,6 +94,11 @@ namespace ReCapProject.WpfUI
                     success.ShowDialog();
                     this.Close();
                 }
+                else
+                {
+                    WindowErrorMessage error = new WindowErrorMessage("Sistem Mesajı", result.Message);
+                    error.ShowDialog();
+                }
             }
         }
 
