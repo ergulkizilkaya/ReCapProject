@@ -1,11 +1,11 @@
 # ReCapProject - Araç Kiralama Sistemi
 
-![bitmap](https://user-images.githubusercontent.com/77868230/107104545-37940380-6833-11eb-88c0-9fa3d4771470.png)  
+![cizimbanner2](https://user-images.githubusercontent.com/77868230/107869922-c395d300-6ea4-11eb-9aab-12f9d5805555.png) 
 Bu repo **Yazılım Geliştirici Yetiştirme Kampı**'nda yapılan çalışmaları kapsayan **Araç Kiralama Projesi**'ni içerir.
 ## :pushpin:Getting Started
 N-Katmanlı mimari yapısı ile hazırlanan, EntityFramework kullanılarak CRUD işlemlerinin yapıldığı, Wpf arayüzü ile çalışan, Araç Kiralama iş yerlerine yönelik örnek bir proje.
 ## :books:Layers  
-![bitmap](https://user-images.githubusercontent.com/77868230/107105115-cb66cf00-6835-11eb-8fd7-9ddc5d7ac56e.png)
+![entities](https://user-images.githubusercontent.com/77868230/107870096-c5609600-6ea6-11eb-82e6-8e797c8a3617.png)
 ### Entities Layer
 Veritabanı nesneleri için oluşturulmuş **Entities Katmanı**'nda **Abstract** ve **Concrete** olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.  
 <br>:file_folder:`Abstract`  
@@ -15,7 +15,7 @@ Veritabanı nesneleri için oluşturulmuş **Entities Katmanı**'nda **Abstract*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [Car.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProject.Entities/Concrete/Car.cs)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [Color.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProject.Entities/Concrete/Color.cs)  
 <br>
-![rect1510](https://user-images.githubusercontent.com/77868230/107105276-82634a80-6836-11eb-9dd5-a159f029cfc0.png)
+![business](https://user-images.githubusercontent.com/77868230/107870095-c5609600-6ea6-11eb-901d-9e7c21c3b614.png)
 ###  Business Layer
 Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetlemek için oluşturulan **Business Katmanı**'nda **Abstract**,**Concrete**,**Utilities** ve **ValidationRules** olmak üzere dört adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.Utilities ve ValidationRules klasörlerinde validation işlemlerinin gerçekleştiği classlar mevcuttur.  
 <br>:file_folder:`Abstract`  
@@ -32,7 +32,7 @@ Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `FluentValidation`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [CarValidator.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/ReCapProject.Business/ValidationRules/FluentValidation/CarValidator.cs)   
 <br>
-![rect1510](https://user-images.githubusercontent.com/77868230/107105238-45975380-6836-11eb-8b3e-50c7b7989b14.png)
+![dal](https://user-images.githubusercontent.com/77868230/107870097-c5f92c80-6ea6-11eb-90e2-4bbd7f36c561.png)
 ###  Data Access Layer
 Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access Katmanı**'nda **Abstract** ve **Concrete** olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.  
 <br>:file_folder:`Abstract`  
@@ -49,7 +49,7 @@ Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access K
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:file_folder: `InMemory`    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: ~~InMemoryCarDal.cs~~  
 <br>
-![bitssmap](https://user-images.githubusercontent.com/77868230/107132824-5fe33700-68f3-11eb-823e-d0737720be07.png)
+![core](https://user-images.githubusercontent.com/77868230/107870091-c42f6900-6ea6-11eb-863e-63d30fa2128c.png)
 
 
 
@@ -78,7 +78,7 @@ Bir framework katmanı olan **Core Katmanı**'nda **DataAccess**, **Entities**, 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [SuccessDataResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/SuccessDataResult.cs)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:page_facing_up: [SuccessResult.cs](https://github.com/ergulkizilkaya/ReCapProject/blob/master/Core/Utilities/Results/Concrete/SuccessDataResult.cs)  
 
-![rect1510-4](https://user-images.githubusercontent.com/77868230/107106389-72e70000-683c-11eb-9717-e2a97e72c990.png)
+![tables](https://user-images.githubusercontent.com/77868230/107870093-c4c7ff80-6ea6-11eb-998a-6458f4feeacd.png)
 ### Veritabanı Oluşturma (localdb)
 Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritabanı oluşturmak için **Visual Studio 2019** için *View > SQL Server Object Explorer* menü yolunu takip edebilirsiniz.Pencere açıldıktan sonra *SQL Server > (localdb)MSSQLLocalDB* altındaki **Databases** klasörüne sağ tıklayıp Add **New Database** seçeneğini ile veritabanınızı oluşturabilirsiniz. Veritabanı oluşturulduktan sonra **New Query** seçerek aşağıda bulunan Sql File ile veritabanınızda olması gereken tabloları oluşturabilirsiniz.  
 <br>
