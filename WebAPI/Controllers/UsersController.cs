@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
             return BadRequest();
         }
         [HttpPost("add")]
-        public IActionResult GetAll(User user)
+        public IActionResult Add(User user)
         {
             var result = _userService.Add(user);
             if (result.Success) { return Ok(result); }
