@@ -49,6 +49,13 @@ namespace ReCapProject.Business.Concrete
             return _colorDal.GetAll();
         }
 
+        public IDataResult<Color> GetById(int id)
+        {
+
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id));
+
+        }
+
         public IResult Update(Color color)
         {
             var validationResult = ValidationTool.Validate(new ColorValidator(), color);
@@ -56,7 +63,7 @@ namespace ReCapProject.Business.Concrete
             {
                 return new ErrorResult(validationResult.Errors.Select(x => x.ErrorMessage).Aggregate((a, b) => $"--{a}\n--{b}"));
             }
-            else if(_colorDal.Get(c => c.Name.ToLower() == color.Name.ToLower()) != null)
+            else if (_colorDal.Get(c => c.Name.ToLower() == color.Name.ToLower()) != null)
             {
                 return new ErrorResult(Messages.ColorAddError);
             }

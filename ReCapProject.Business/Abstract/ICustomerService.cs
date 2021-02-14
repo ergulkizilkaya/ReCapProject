@@ -9,5 +9,9 @@ namespace ReCapProject.Business.Abstract
     public interface ICustomerService
     {
         IDataResult<List<Customer>> GetAll();
+        IDataResult<Customer> GetById(int id);
+        IResult Add(Customer user);
+        IResult Update(Customer user);
+        IResult Delete(Customer user);
     }
 }

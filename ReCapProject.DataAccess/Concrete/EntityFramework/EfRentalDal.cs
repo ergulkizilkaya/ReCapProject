@@ -34,7 +34,7 @@ namespace ReCapProject.DataAccess.Concrete.EntityFramework
                                  ReturnDate = re.ReturnDate,
                                  UserName = us.FirstName + " " + us.LastName
                              };
-
+               
                 return result.ToList();
 
             }
