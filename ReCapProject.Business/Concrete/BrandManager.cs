@@ -8,9 +8,9 @@ using ReCapProject.DataAccess.Abstract;
 using Core.Utilities.Results.Concrete;
 using ReCapProject.Business.Constants;
 using Core.Utilities.Results.Abstract;
-using ReCapProject.Business.Utilities;
 using ReCapProject.Business.ValidationRules.FluentValidation;
 using System.Linq;
+using Core.Aspects.AutoFac.Validation;
 
 namespace ReCapProject.Business.Concrete
 {
@@ -23,18 +23,10 @@ namespace ReCapProject.Business.Concrete
             _brandDal = brandDal;
         }
 
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand brand)
         {
-            var validationResult = ValidationTool.Validate(new BrandValidator(), brand);
-            if (validationResult.Errors.Count > 0)
-            {
-                return new ErrorResult(validationResult.Errors.Select(x => x.ErrorMessage).Aggregate((a, b) => $"--{a}\n--{b}"));
-            }
-            else if (_brandDal.Get(c => c.Name.ToLower() == brand.Name.ToLower()) != null)
-            {
-                return new ErrorResult(Messages.BrandAddError);
-            }
-
+           
             _brandDal.Add(brand);
             return new SuccessResult(Messages.BrandAdded);
         }
@@ -55,18 +47,10 @@ namespace ReCapProject.Business.Concrete
             return new SuccessDataResult<Brand>(_brandDal.Get(b=>b.Id == id));
         }
 
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Update(Brand brand)
         {
-            var validationResult = ValidationTool.Validate(new BrandValidator(), brand);
-            if (validationResult.Errors.Count > 0)
-            {
-                return new ErrorResult(validationResult.Errors.Select(x => x.ErrorMessage).Aggregate((a, b) => $"--{a}\n--{b}"));
-            }
-            else if (_brandDal.Get(c => c.Name.ToLower() == brand.Name.ToLower()) != null)
-            {
-                return new ErrorResult(Messages.BrandAddError);
-            }
-
+           
             _brandDal.Update(brand);
             return new SuccessResult(Messages.BrandUpdated);
         }

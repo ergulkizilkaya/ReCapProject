@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="7.3.3" />
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ReCapProject.DataAccess\ReCapProject.DataAccess.csproj" />
     <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utilities\" />
   </ItemGroup>
 
 </Project>

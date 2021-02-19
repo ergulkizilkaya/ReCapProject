@@ -17,5 +17,6 @@ namespace ReCapProject.Business.Abstract
         IResult Delete(Rental rental);
         IResult CheckReturnDate(int carId);
         IResult UpdateReturnDate(int carId);
+      
     }
 }

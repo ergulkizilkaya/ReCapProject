@@ -1,7 +1,9 @@
-﻿using Core.Utilities.Results.Abstract;
+﻿using Core.Aspects.AutoFac.Validation;
+using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using ReCapProject.Business.Abstract;
 using ReCapProject.Business.Constants;
+using ReCapProject.Business.ValidationRules.FluentValidation;
 using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Entities.Concrete;
 using ReCapProject.Entities.DTOs;
@@ -21,6 +23,7 @@ namespace ReCapProject.Business.Concrete
             _rentalDal = rentalDal;
         }
 
+        [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental rental)
         {
 

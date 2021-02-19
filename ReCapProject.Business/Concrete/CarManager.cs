@@ -1,6 +1,5 @@
 ﻿using ReCapProject.DataAccess.Abstract;
 using ReCapProject.Business.Abstract;
-using ReCapProject.Business.Utilities;
 using ReCapProject.Business.ValidationRules.FluentValidation;
 using ReCapProject.Entities.Concrete;
 using ReCapProject.Entities.DTOs;
@@ -11,6 +10,9 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using System.Linq;
 using ReCapProject.Business.Constants;
+using FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
+using Core.Aspects.AutoFac.Validation;
 
 namespace ReCapProject.Business.Concrete
 {
@@ -22,14 +24,9 @@ namespace ReCapProject.Business.Concrete
         {
             _carDal = carDal;
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            var validationResult = ValidationTool.Validate(new CarValidator(), car);
-            if (validationResult.Errors.Count > 0)
-            {
-                return new ErrorResult(validationResult.Errors.Select(x => x.ErrorMessage).Aggregate((a, b) => $"--{a}\n--{b}"));
-            }
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
@@ -65,13 +62,11 @@ namespace ReCapProject.Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(c => c.ColorId == p));
         }
 
+
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
-            var validationResult = ValidationTool.Validate(new CarValidator(), car);
-            if (validationResult.Errors.Count > 0)
-            {
-                return new Result(false, validationResult.Errors.Select(x=>x.ErrorMessage).Aggregate((a,b)=>$"--{a}\n--{b}"));
-            }
+           
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
 
